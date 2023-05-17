@@ -1,0 +1,411 @@
+[
+    
+      {
+        "id": 1,
+        "name": "Ford Mustang",
+        "price": 19.99,
+        "rating": 4.8,
+        "quantity": 10,
+        "category": "Sports Car"
+      },
+      {
+        "id": 2,
+        "name": "Chevrolet Camaro",
+        "price": 25.99,
+        "rating": 4.5,
+        "quantity": 8,
+        "category": "Sports Car"
+      },
+      {
+        "id": 3,
+        "name": "Nissan GT-R",
+        "price": 89.99,
+        "rating": 4.9,
+        "quantity": 5,
+        "category": "Sports Car"
+      },
+      {
+        "id": 4,
+        "name": "Audi R8",
+        "price": 109.99,
+        "rating": 4.7,
+        "quantity": 3,
+        "category": "Sports Car"
+      },
+      {
+        "id": 5,
+        "name": "BMW M4",
+        "price": 79.99,
+        "rating": 4.6,
+        "quantity": 6,
+        "category": "Sports Car"
+      },
+      {
+        "id": 6,
+        "name": "Porsche 911",
+        "price": 129.99,
+        "rating": 4.9,
+        "quantity": 2,
+        "category": "Sports Car"
+      },
+      {
+        "id": 7,
+        "name": "Lamborghini Huracán",
+        "price": 249.99,
+        "rating": 4.8,
+        "quantity": 1,
+        "category": "Sports Car"
+      },
+      {
+        "id": 8,
+        "name": "McLaren 720S",
+        "price": 299.99,
+        "rating": 4.9,
+        "quantity": 4,
+        "category": "Sports Car"
+      },
+      {
+        "id": 9,
+        "name": "Ferrari 488 GTB",
+        "price": 399.99,
+        "rating": 4.9,
+        "quantity": 2,
+        "category": "Sports Car"
+      },
+      {
+        "id": 10,
+        "name": "Aston Martin Vantage",
+        "price": 199.99,
+        "rating": 4.7,
+        "quantity": 3,
+        "category": "Sports Car"
+      },
+  
+    
+      {
+        "id": 11,
+        "name": "Bugatti Chiron",
+        "price": 2999.99,
+        "rating": 4.9,
+        "quantity": 1,
+        "category": "Supercar"
+      },
+      {
+        "id": 12,
+        "name": "Koenigsegg Jesko",
+        "price": 3999.99,
+        "rating": 4.9,
+        "quantity": 2,
+        "category": "Supercar"
+      },
+      {
+        "id": 13,
+        "name": "Aston Martin Valkyrie",
+        "price": 4499.99,
+        "rating": 4.8,
+        "quantity": 1,
+        "category": "Supercar"
+      },
+      {
+        "id": 14,
+        "name": "Pagani Huayra",
+        "price": 3899.99,
+        "rating": 4.7,
+        "quantity": 3,
+        "category": "Supercar"
+      },
+      {
+        "id": 15,
+        "name": "Mercedes-AMG One",
+        "price": 4999.99,
+        "rating": 4.9,
+        "quantity": 2,
+        "category": "Supercar"
+      },
+      {
+        "id": 16,
+        "name": "Ferrari LaFerrari",
+        "price": 3999.99,
+        "rating": 4.8,
+        "quantity": 1,
+        "category": "Supercar"
+      },
+      {
+        "id": 17,
+        "name": "Lamborghini Aventador",
+        "price": 2999.99,
+        "rating": 4.7,
+        "quantity": 2,
+        "category": "Supercar"
+      },
+      {
+        "id": 18,
+        "name": "McLaren P1",
+        "price": 3499.99,
+        "rating": 4.9,
+        "quantity": 1,
+        "category": "Supercar"
+      },
+      {
+        "id": 19,
+        "name": "Porsche 918 Spyder",
+        "price": 3499.99,
+        "rating": 4.8,
+        "quantity": 2,
+        "category": "Supercar"
+      },
+      {
+        "id": 20,
+        "name": "Lamborghini Sian",
+        "price": 4599.99,
+        "rating": 4.9,
+        "quantity": 1,
+        "category": "Supercar"
+      },
+    
+  
+      {
+        "id": 21,
+        "name": "Ford F-150",
+        "price": 34999.99,
+        "rating": 4.7,
+        "quantity": 5,
+        "category": "Truck"
+      },
+      {
+        "id": 22,
+        "name": "Chevrolet Silverado 1500",
+        "price": 36999.99,
+        "rating": 4.6,
+        "quantity": 4,
+        "category": "Truck"
+      },
+      {
+        "id": 23,
+        "name": "Ram 1500",
+        "price": 37999.99,
+        "rating": 4.8,
+        "quantity": 3,
+        "category": "Truck"
+      },
+      {
+        "id": 24,
+        "name": "GMC Sierra 1500",
+        "price": 38999.99,
+        "rating": 4.7,
+        "quantity": 2,
+        "category": "Truck"
+      },
+      {
+        "id": 25,
+        "name": "Toyota Tundra",
+        "price": 35999.99,
+        "rating": 4.5,
+        "quantity": 3,
+        "category": "Truck"
+      },
+      {
+        "id": 26,
+        "name": "Ford Ranger",
+        "price": 29999.99,
+        "rating": 4.6,
+        "quantity": 4,
+        "category": "Truck"
+      },
+      {
+        "id": 27,
+        "name": "Chevrolet Colorado",
+        "price": 30999.99,
+        "rating": 4.5,
+        "quantity": 3,
+        "category": "Truck"
+      },
+      {
+        "id": 28,
+        "name": "Nissan Frontier",
+        "price": 27999.99,
+        "rating": 4.4,
+        "quantity": 2,
+        "category": "Truck"
+      },
+      {
+        "id": 29,
+        "name": "Toyota Tacoma",
+        "price": 33999.99,
+        "rating": 4.7,
+        "quantity": 5,
+        "category": "Truck"
+      },
+      {
+        "id": 30,
+        "name": "GMC Canyon",
+        "price": 31999.99,
+        "rating": 4.4,
+        "quantity": 2,
+        "category": "Truck"
+      },
+    
+      {
+        "id": 31,
+        "name": "Honda Civic",
+        "price": 199.99,
+        "rating": 4.6,
+        "quantity": 8,
+        "category": "Regular Car"
+      },
+      {
+        "id": 32,
+        "name": "Toyota Corolla",
+        "price": 179.99,
+        "rating": 4.7,
+        "quantity": 10,
+        "category": "Regular Car"
+      },
+      {
+        "id": 33,
+        "name": "Volkswagen Golf",
+        "price": 159.99,
+        "rating": 4.5,
+        "quantity": 6,
+        "category": "Regular Car"
+      },
+      {
+        "id": 34,
+        "name": "Ford Focus",
+        "price": 169.99,
+        "rating": 4.4,
+        "quantity": 4,
+        "category": "Regular Car"
+      },
+      {
+        "id": 35,
+        "name": "Nissan Sentra",
+        "price": 179.99,
+        "rating": 4.3,
+        "quantity": 5,
+        "category": "Regular Car"
+      },
+      {
+        "id": 36,
+        "name": "Chevrolet Cruze",
+        "price": 159.99,
+        "rating": 4.2,
+        "quantity": 3,
+        "category": "Regular Car"
+      },
+      {
+        "id": 37,
+        "name": "Hyundai Elantra",
+        "price": 169.99,
+        "rating": 4.6,
+        "quantity": 7,
+        "category": "Regular Car"
+      },
+      {
+        "id": 38,
+        "name": "Kia Forte",
+        "price": 159.99,
+        "rating": 4.4,
+        "quantity": 4,
+        "category": "Regular Car"
+      },
+      {
+        "id": 39,
+        "name": "Mazda3",
+        "price": 179.99,
+        "rating": 4.5,
+        "quantity": 6,
+        "category": "Regular Car"
+      },
+      {
+        "id": 40,
+        "name": "Subaru Impreza",
+        "price": 189.99,
+        "rating": 4.3,
+        "quantity": 5,
+        "category": "Regular Car"
+      },
+    
+      {
+        "id": 41,
+        "name": "Mercedes-Benz S-Class",
+        "price": 199.99,
+        "rating": 4.9,
+        "quantity": 3,
+        "category": "Luxury Car"
+      },
+      {
+        "id": 42,
+        "name": "BMW 7 Series",
+        "price": 179.99,
+        "rating": 4.8,
+        "quantity": 2,
+        "category": "Luxury Car"
+      },
+      {
+        "id": 43,
+        "name": "Audi A8",
+        "price": 169.99,
+        "rating": 4.7,
+        "quantity": 2,
+        "category": "Luxury Car"
+      },
+      {
+        "id": 44,
+        "name": "Lexus LS",
+        "price": 189.99,
+        "rating": 4.6,
+        "quantity": 1,
+        "category": "Luxury Car"
+      },
+      {
+        "id": 45,
+        "name": "Jaguar XJ",
+        "price": 179.99,
+        "rating": 4.8,
+        "quantity": 2,
+        "category": "Luxury Car"
+      },
+      {
+        "id": 46,
+        "name": "Rolls-Royce Phantom",
+        "price": 299.99,
+        "rating": 4.9,
+        "quantity": 1,
+        "category": "Luxury Car"
+      },
+      {
+        "id": 47,
+        "name": "Bentley Continental GT",
+        "price": 249.99,
+        "rating": 4.7,
+        "quantity": 2,
+        "category": "Luxury Car"
+      },
+      {
+        "id": 48,
+        "name": "Porsche Panamera",
+        "price": 189.99,
+        "rating": 4.6,
+        "quantity": 3,
+        "category": "Luxury Car"
+      },
+      {
+        "id": 49,
+        "name": "Tesla Model S",
+        "price": 199.99,
+        "rating": 4.8,
+        "quantity": 3,
+        "category": "Luxury Car"
+      },
+      {
+        "id": 50,
+        "name": "Acura RLX",
+        "price": 169.99,
+        "rating": 4.5,
+        "quantity": 2,
+        "category": "Luxury Car"
+      }
+    
+    ]
+  
