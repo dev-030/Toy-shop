@@ -10,11 +10,12 @@ import Navbar from './body/Navbar/Navbar.jsx';
 import AuthProviders from './authentication/AuthProviders.jsx';
 import AddToys from './body/AddToys.jsx';
 import MyToys from './body/MyToys.jsx';
-import AllToys from './body/AllToys.jsx';
+import AllToys from './body/folder/AllToys.jsx';
 import Blog from './body/Blog.jsx';
 import Login from './body/Login.jsx';
 import Register from './body/Register.jsx';
 import NotFound from './body/Notfound.jsx';
+import ViewDetails from './body/folder/ViewDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -27,7 +28,13 @@ const router = createBrowserRouter([
         element :<App/>
       },{
         path:'/all-toys',
-        element :<AllToys/>
+        element :<AllToys/>,
+        children : [
+          {
+            path:'/all-toys/view-details',
+            element :<ViewDetails/>
+          }
+        ]
       },{
         path:'/my-toys',
         element :<MyToys/>
