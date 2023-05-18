@@ -14,7 +14,6 @@ import AllToys from './body/folder/AllToys.jsx';
 import Blog from './body/Blog.jsx';
 import Login from './body/Login.jsx';
 import Register from './body/Register.jsx';
-import NotFound from './body/Notfound.jsx';
 import ViewDetails from './body/folder/ViewDetails.jsx';
 
 
@@ -54,7 +53,7 @@ const router = createBrowserRouter([
     ]
   },{
     path:'*',
-    element : <NotFound/>
+    element : <h1>Not found page</h1>
   }
 ]);
 
