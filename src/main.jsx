@@ -37,7 +37,7 @@ const router = createBrowserRouter([
           {
             path:'/all-toys/:id',
             element :<PrivateRoute><ViewDetails path={'/login'} data={true}/></PrivateRoute>,
-            loader : ({params}) => fetch(`http://localhost:3000/all-toys/${params.id}`)
+            loader : ({params}) => fetch(`https://cute-gold-lemming-sari.cyclic.app/all-toys/${params.id}`)
           }
         ]
       },

@@ -36,7 +36,7 @@ export default function AllToys(){
       }
 
     useEffect(()=>{
-        fetch('http://localhost:3000/').then(data => data.json()).then(data => setToys(data))
+        fetch('https://cute-gold-lemming-sari.cyclic.app/').then(data => data.json()).then(data => setToys(data))
     },[])
     return(
         <div>
