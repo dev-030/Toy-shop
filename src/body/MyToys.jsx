@@ -69,6 +69,7 @@ export default function MyToys(){
         event.preventDefault();
 
         const id = modaldata._id;
+
         const name = event.target.name.value;
         const price = event.target.price.value;
         const quantity = event.target.quantity.value;
@@ -79,10 +80,23 @@ export default function MyToys(){
         console.log(totaldata)
 
 
+        fetch('http://localhost:3000/' , {
+            method :'PUT' ,
+            headers : {'Content-type' : 'application/json'} ,
+            body : JSON.stringify(totaldata)
+          }).then(data => data.json()).then(data =>{
+            if(data.modifiedCount == 1){
+              
+                console.log('updated')
+                document.getElementById('my-modal-6').click();
+
+            }else{
+                console.log('didnt updated')
+            }
+          })
     
         
 
-        // document.getElementById('my-modal-6').click();
 
     }
 
@@ -152,7 +166,7 @@ export default function MyToys(){
                     <div>
                 
                         <label htmlFor="">Toy name : </label>
-                        <input type="text" defaultValue={modaldata.name} className="border border-black" id="quantity" />  
+                        <input type="text" defaultValue={modaldata.name} className="border border-black" id="name" />  
                         <br />
                         <label htmlFor="">Price : </label>
                         <input type="text" defaultValue={modaldata.price} className="border border-black" id="price" />   
