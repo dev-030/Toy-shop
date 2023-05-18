@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import Select from 'react-select';
 import CreatableSelect from 'react-select/creatable';
 import { authContext } from "../authentication/AuthProviders";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function AddToys(){
 
@@ -19,11 +20,13 @@ export default function AddToys(){
         data.category = selectedOption?.value;
         data.sellerName = user?.displayName;
         data.sellerEmail = user?.email ;
-        console.log(data)
+        console.log(data.price)
         fetch('http://localhost:3000/addtoys' , {
             method : 'POST' ,
             headers : {'content-type' : 'application/json'},
             body : JSON.stringify(data)
+        }).then(data => data.json()).then(data => {
+            toast.success("Successfully added.");
         })
     };
 
@@ -40,6 +43,18 @@ export default function AddToys(){
         <div>
 
 
+            <ToastContainer position="bottom-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"/>
+
+
             <h1>It is the add toys page </h1>
 
             <form onSubmit={handleSubmit(onSubmit)} className="m-auto my-10 w-1/2">
@@ -50,7 +65,7 @@ export default function AddToys(){
                     <input disabled defaultValue={user?.email} placeholder="Seller Email" className="border"/>
                     <input {...register("name", { required:'true', maxLength: 20 })} placeholder="Toy Name" className="border"/>
                     <input {...register("image", { required:'true' })} type="text" placeholder="Photo Url" className="border"/>
-                    <input {...register("price", {required:'true',maxLength: 20 })} placeholder="Price" className="border"/>
+                    <input type="number" {...register("price", {required:'true',maxLength: 20 })} placeholder="Price" className="border"/>
                     <CreatableSelect defaultValue={selectedOption} required onChange={(data) => setSelectedOption(data)} options={options}/>
                     <input {...register("rating", {required:'true'})} placeholder="rating" className="border"/>
                     <input {...register("quantity", {required:'true'})} placeholder="Available quantity" className="border"/>

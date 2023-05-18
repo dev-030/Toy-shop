@@ -8,7 +8,19 @@ import './app.css'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
+
+  const [ data , setdata ] = useState([]);
+
+  const tabdata = (data) => {
+    fetch(`http://localhost:3000/category/?category=${data}`).then(data => data.json()).then(data => setdata(data))
+  }
+
+  useEffect(()=>{
+    fetch(`http://localhost:3000/category/?category=Sports Car`).then(data => data.json()).then(data => setdata(data))
+  },[])
+
+  console.log(data)
 
   return (
     <>
@@ -46,37 +58,84 @@ function App() {
           <div className='text-center mx-20'>
             <Tabs>
               <TabList>
-                <Tab>Sports Cars</Tab>
-                <Tab>Super Cars</Tab>
-                <Tab>Trucks</Tab>
+                <Tab onClick={()=>{tabdata('Sports Car')}}>Sports Cars</Tab>
+                <Tab onClick={()=>{tabdata('Supercar')}}>Super Cars</Tab>
+                <Tab onClick={()=>{tabdata('Truck')}}>Trucks</Tab>
               </TabList>
 
               <TabPanel>
-                <div>
-                  
-                <div className="card w-96 bg-base-100 shadow-xl">
-                  <figure><img src="https://i.ibb.co/mFnDhGD/default-profile-picture-avatar-user-avatar-icon-person-icon-head-icon-profile-picture-icons-default.jpg" alt="Shoes" /></figure>
-                  <div className="card-body">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions justify-end">
-                      <button className="btn btn-primary">Buy Now</button>
+                <div className='grid grid-cols-3'>
+                 
+                  {
+                    data.map(data => 
+                      
+                      <div key={data._id} className="card w-96 bg-base-100 shadow-xl">
+                      <figure><img src="https://i.ibb.co/mFnDhGD/default-profile-picture-avatar-user-avatar-icon-person-icon-head-icon-profile-picture-icons-default.jpg" alt="Shoes" /></figure>
+                      <div className="card-body">
+                        <h2 className="card-title">{data.name}</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div className="card-actions justify-end">
+                          <button className="btn btn-primary">Buy Now</button>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                      
+                      )
+                  }
+               
                 </div>
               </TabPanel>
               
               <TabPanel>
-
-              
-                
-                <h2>Any content 2</h2>
+                <div className='grid grid-cols-3'>
+                 
+                  {
+                    data.map(data => 
+                      
+                      
+                      <div key={data._id} className="card w-96 bg-base-100 shadow-xl">
+                      <figure><img src="https://i.ibb.co/mFnDhGD/default-profile-picture-avatar-user-avatar-icon-person-icon-head-icon-profile-picture-icons-default.jpg" alt="Shoes" /></figure>
+                      <div className="card-body">
+                        <h2 className="card-title">{data.name}</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div className="card-actions justify-end">
+                          <button className="btn btn-primary">Buy Now</button>
+                        </div>
+                      </div>
+                    </div>
+                      
+                      )
+                  }
+               
+                </div>
               </TabPanel>
 
               <TabPanel>
-                <h2>Any content 3</h2>
+                <div className='grid grid-cols-3'>
+                 
+                  {
+                    data.map(data => 
+                      
+                      
+                      <div key={data._id} className="card w-96 bg-base-100 shadow-xl">
+                      <figure><img src="https://i.ibb.co/mFnDhGD/default-profile-picture-avatar-user-avatar-icon-person-icon-head-icon-profile-picture-icons-default.jpg" alt="Shoes" /></figure>
+                      <div className="card-body">
+                        <h2 className="card-title">{data.name}</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div className="card-actions justify-end">
+                          <button className="btn btn-primary">Buy Now</button>
+                        </div>
+                      </div>
+                    </div>
+                      
+                      )
+                  }
+               
+                </div>
               </TabPanel>
+
+
+
             </Tabs>
           </div>
 

@@ -15,12 +15,20 @@ export default function MyToys(){
     const {user} = useContext(authContext);
     const [ toys, setToys ] = useState([]);
     const [modaldata , setmodaldata ] = useState([]);
+    const [ count , setCount ] = useState(true);
 
 
     useEffect(()=>{
             fetch(`http://localhost:3000/my-toys?email=${user?.email}`).then(data => data.json()).then(data => setToys(data))
-    },[])
+    },[count])
 
+
+
+    const sortdata = (data) => {
+
+        fetch(`http://localhost:3000/my-toys/sort?email=${user?.email}&sorting=${data}`).then(data => data.json()).then(data => setToys(data))
+       
+    }
 
     const deletedata = (data) => {
     swal({
@@ -40,6 +48,7 @@ export default function MyToys(){
                     swal("The data was deleted", {
                         icon: "success",            
                     });
+                    setCount(!count)
                 }
             })
         }
@@ -48,8 +57,8 @@ export default function MyToys(){
 
 
     const updataData = (data) => {
-        document.getElementById('my-modal-6').click();
         setmodaldata(data)
+        document.getElementById('my-modal-6').click();
     }
 
     const updatevalue = (event) => {
@@ -57,9 +66,9 @@ export default function MyToys(){
 
         const id = modaldata._id;
         const name = event.target.name.value;
-        const price = event.target.price.value;
-        const quantity = event.target.quantity.value;
-        const rating = event.target.rating.value;
+        const price = parseInt(event.target.price.value);
+        const quantity = parseInt(event.target.quantity.value);
+        const rating = parseInt(event.target.rating.value);
         const description = event.target.description.value;
         const totaldata = {id,name,price,quantity,rating,description}
 
@@ -71,6 +80,8 @@ export default function MyToys(){
             if(data.modifiedCount == 1){
                 document.getElementById('my-modal-6').click();
                 toast.success("Successfully updated.");
+                setCount(!count)
+                event.target.reset();
             }else{
                 toast.info("You haven't changed anything.");
             }
@@ -78,10 +89,35 @@ export default function MyToys(){
     }
 
 
+    const findInTable = ()=> {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }       
+        }
+      }
+
+
 
     return(
 
         <div>
+
+
+            <button className="btn" onClick={()=> {sortdata(1)}}>Ascending</button>
+            <button className="btn" onClick={()=> {sortdata(-1)}}>Descending</button>
+
 
             <ToastContainer position="bottom-right"
             autoClose={3000}
@@ -157,13 +193,13 @@ export default function MyToys(){
                         <input type="text" defaultValue={modaldata.name} className="border border-black" id="name" />  
                         <br />
                         <label htmlFor="">Price : </label>
-                        <input type="text" defaultValue={modaldata.price} className="border border-black" id="price" />   
+                        <input type="number" defaultValue={modaldata.price} className="border border-black" id="price" />   
                         <br />
                         <label htmlFor="">Quantity : </label>
-                        <input type="text" defaultValue={modaldata.quantity} className="border border-black" id="quantity" />  
+                        <input type="number" defaultValue={modaldata.quantity} className="border border-black" id="quantity" />  
                         <br />
                         <label htmlFor="">Rating : </label>
-                        <input type="text" defaultValue={modaldata.rating} className="border border-black" id="rating" />   
+                        <input type="number" defaultValue={modaldata.rating} className="border border-black" id="rating" />   
                         <br />
                         <label htmlFor="">Description : </label>
                         <input type="text" defaultValue={modaldata?.description} className="border border-black" id="description" />   
