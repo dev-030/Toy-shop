@@ -41,8 +41,13 @@ export default function Navbar(){
             <ul className="menu menu-horizontal flex gap-10 font-bold" id='navbar'>
                 <NavLink to={'/'} className=''>Home</NavLink>
                 <NavLink to={'/all-toys'} className=''>All Toys</NavLink>
-                <NavLink to={'/my-toys'} className=''>My Toys</NavLink>
-                <NavLink to={'/add-toy'} className=''>Add a toy</NavLink>
+                { user&&
+                <>
+                  <NavLink to={'/my-toys'} className=''>My Toys</NavLink>
+                  <NavLink to={'/add-toy'} className=''>Add a toy</NavLink>
+                  </>
+                }
+    
                 <NavLink to={'/blog'} className=''>Blog</NavLink>
             </ul>
           </div>

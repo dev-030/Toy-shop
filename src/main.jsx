@@ -15,6 +15,11 @@ import Blog from './body/Blog.jsx';
 import Login from './body/Login.jsx';
 import Register from './body/Register.jsx';
 import ViewDetails from './body/folder/ViewDetails.jsx';
+import PrivateRoute from './authentication/PrivateRoute.jsx';
+
+
+
+
 
 
 const router = createBrowserRouter([
@@ -36,19 +41,19 @@ const router = createBrowserRouter([
         ]
       },{
         path:'/my-toys',
-        element :<MyToys/>
+        element :<PrivateRoute><MyToys path={'/login'} data={true} /></PrivateRoute>
       },{
         path:'/add-toy',
-        element :<AddToys/>
+        element : <PrivateRoute><AddToys path={'/login'} data={true} /></PrivateRoute>
       },{
         path:'/blog',
         element :<Blog/>
       },{
         path:'/login',
-        element :<Login/>
+        element :<PrivateRoute><Login path={'/'} data={false}/></PrivateRoute>
       },{
         path:'/register',
-        element :<Register/>
+        element :<PrivateRoute><Register path={'/'} data={false}/></PrivateRoute>
       },
     ]
   },{
