@@ -1,12 +1,11 @@
 import { useContext, useEffect, useState } from "react"
 import { AiOutlineDelete } from "react-icons/ai";
 import { RxUpdate } from "react-icons/rx";
-
-
-
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import swal from 'sweetalert';
 import { authContext } from "../authentication/AuthProviders";
+
 
 
 
@@ -14,62 +13,49 @@ export default function MyToys(){
 
 
     const {user} = useContext(authContext);
-
     const [ toys, setToys ] = useState([]);
+    const [modaldata , setmodaldata ] = useState([]);
+
 
     useEffect(()=>{
             fetch(`http://localhost:3000/my-toys?email=${user?.email}`).then(data => data.json()).then(data => setToys(data))
     },[])
 
-  
 
-    const showalert = (data) => {
-        swal({
-            title: "Are you sure you want to delete this ?",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-              swal("The data was deleted", {
-                icon: "success",            
-              });
-
-              console.log(data)
-            
+    const deletedata = (data) => {
+    swal({
+        title: "Are you sure you want to delete this ?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+        })
+        .then((willDelete) => {
+        if (willDelete) {            
             fetch('http://localhost:3000/my-toys' , {
                 method : "DELETE" , 
                 headers : { 'content-type' : 'application/json'} ,
                 body : JSON.stringify({data})
+            }).then(data => data.json()).then(data => {
+                if(data.deletedCount==1){
+                    swal("The data was deleted", {
+                        icon: "success",            
+                    });
+                }
             })
-
-
-            //   useEffect(()=>{
-
-   
-
-            //   },[])
-    
-            }
-          });
+        }
+        });
     }
-    // console.log(toys[0])
 
-    const [modaldata , setmodaldata ] = useState([]);
 
     const updataData = (data) => {
         document.getElementById('my-modal-6').click();
         setmodaldata(data)
     }
 
-
-
     const updatevalue = (event) => {
         event.preventDefault();
 
         const id = modaldata._id;
-
         const name = event.target.name.value;
         const price = event.target.price.value;
         const quantity = event.target.quantity.value;
@@ -77,27 +63,18 @@ export default function MyToys(){
         const description = event.target.description.value;
         const totaldata = {id,name,price,quantity,rating,description}
 
-        console.log(totaldata)
-
-
         fetch('http://localhost:3000/' , {
             method :'PUT' ,
             headers : {'Content-type' : 'application/json'} ,
             body : JSON.stringify(totaldata)
-          }).then(data => data.json()).then(data =>{
+        }).then(data => data.json()).then(data =>{
             if(data.modifiedCount == 1){
-              
-                console.log('updated')
                 document.getElementById('my-modal-6').click();
-
+                toast.success("Successfully updated.");
             }else{
-                console.log('didnt updated')
+                toast.info("You haven't changed anything.");
             }
-          })
-    
-        
-
-
+        })
     }
 
 
@@ -105,6 +82,17 @@ export default function MyToys(){
     return(
 
         <div>
+
+            <ToastContainer position="bottom-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"/>
 
             <div className="overflow-x-auto">
 
@@ -149,7 +137,7 @@ export default function MyToys(){
                                         <RxUpdate size={30} onClick={()=>updataData(data)}/>
                                     </td>
                                     <td>
-                                        <AiOutlineDelete size={30} onClick={()=>showalert(data._id)}/>
+                                        <AiOutlineDelete size={30} onClick={()=>deletedata(data._id)}/>
                                     </td>
                                 </tr>
                             )
