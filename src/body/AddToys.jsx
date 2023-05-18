@@ -48,12 +48,12 @@ export default function AddToys(){
 
                     <input disabled defaultValue={user?.displayName} placeholder="Seller Name" className="border"/>
                     <input disabled defaultValue={user?.email} placeholder="Seller Email" className="border"/>
-                    <input {...register("toyName", { required:'true', maxLength: 20 })} placeholder="Toy Name" className="border"/>
-                    <input {...register("url", { required:'true' })} type="text" placeholder="Photo Url" className="border"/>
+                    <input {...register("name", { required:'true', maxLength: 20 })} placeholder="Toy Name" className="border"/>
+                    <input {...register("image", { required:'true' })} type="text" placeholder="Photo Url" className="border"/>
                     <input {...register("price", {required:'true',maxLength: 20 })} placeholder="Price" className="border"/>
                     <CreatableSelect defaultValue={selectedOption} required onChange={(data) => setSelectedOption(data)} options={options}/>
                     <input {...register("rating", {required:'true'})} placeholder="rating" className="border"/>
-                    <input {...register("availablequantity", {required:'true'})} placeholder="Available quantity" className="border"/>
+                    <input {...register("quantity", {required:'true'})} placeholder="Available quantity" className="border"/>
 
                 </div>
 
