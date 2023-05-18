@@ -11,7 +11,7 @@ import { authContext } from "../authentication/AuthProviders";
 export default function Login() {
 
         
-        const {userLogin,googleSignIn,githubSignIn} = useContext(authContext)
+        const {userLogin,googleSignIn,githubSignIn ,googleLogin ,githubLogin} = useContext(authContext)
 
     const navigate = useNavigate();
     const notify = (message) => toast.error(message);
@@ -35,12 +35,12 @@ export default function Login() {
     }
 
     const singIn = () =>{
-        googleSignIn().then(()=>{
+        googleLogin().then(()=>{
             navigate('/')
         })
     }
     const github = () =>{
-        githubSignIn().then(()=>{
+        githubLogin().then(()=>{
             navigate('/')
         })
     }
