@@ -77,8 +77,9 @@ export default function AllToys(){
                                         <td>{data.category}</td>
                                         <td>{data.price}</td>
                                         <td>{data.quantity}</td>
-                                        <Link to={'/all-toys/view-details'}><label htmlFor="my-modal-3" className="btn">View Details</label></Link>
-
+                                        <td>
+                                        <Link to={'/view-details'}><label htmlFor="my-modal-3" className="btn">View Details</label></Link>
+                                        </td>
                                     </tr>
                                 )
                             }

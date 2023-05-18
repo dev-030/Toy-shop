@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import Select from 'react-select';
 import CreatableSelect from 'react-select/creatable';
+import { authContext } from "../authentication/AuthProviders";
 
 
 export default function AddToys(){
+
+
+    const {loading , user}  = useContext(authContext)
 
 
     const [selectedOption, setSelectedOption] = useState(null);
@@ -13,7 +17,14 @@ export default function AddToys(){
 
     const onSubmit = data => {
         data.category = selectedOption?.value;
+        data.sellerName = user?.displayName;
+        data.sellerEmail = user?.email ;
         console.log(data)
+        fetch('http://localhost:3000/addtoys' , {
+            method : 'POST' ,
+            headers : {'content-type' : 'application/json'},
+            body : JSON.stringify(data)
+        })
     };
 
 
@@ -31,18 +42,18 @@ export default function AddToys(){
 
             <h1>It is the add toys page </h1>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="m-auto w-1/2">
+            <form onSubmit={handleSubmit(onSubmit)} className="m-auto my-10 w-1/2">
 
                 <div className="grid grid-cols-2 gap-5">
 
-                    <input {...register("firstName", {  maxLength: 20 })} placeholder="Name" className="border"/>
-                    <input {...register("url", { })} type="text" placeholder="Photo Url" className="border"/>
-                    <input {...register("sellerName", { maxLength: 20 })} placeholder="Seller Name" className="border"/>
-                    <input {...register("sellerEmail", { maxLength: 20 })} placeholder="Seller Email" className="border"/>
-                    <input {...register("price", {maxLength: 20 })} placeholder="Price" className="border"/>
-                    <CreatableSelect defaultValue={selectedOption} onChange={(data) => setSelectedOption(data)} options={options}/>
-                    <input {...register("rating")} type="number" name="" id="" placeholder="Rating" className="border"/>
-                    <input {...register("availablequantity")}  type="number" name="" id="" placeholder="Available quantity" className="border"/>
+                    <input disabled defaultValue={user?.displayName} placeholder="Seller Name" className="border"/>
+                    <input disabled defaultValue={user?.email} placeholder="Seller Email" className="border"/>
+                    <input {...register("toyName", { required:'true', maxLength: 20 })} placeholder="Toy Name" className="border"/>
+                    <input {...register("url", { required:'true' })} type="text" placeholder="Photo Url" className="border"/>
+                    <input {...register("price", {required:'true',maxLength: 20 })} placeholder="Price" className="border"/>
+                    <CreatableSelect defaultValue={selectedOption} required onChange={(data) => setSelectedOption(data)} options={options}/>
+                    <input {...register("rating", {required:'true'})} placeholder="rating" className="border"/>
+                    <input {...register("availablequantity", {required:'true'})} placeholder="Available quantity" className="border"/>
 
                 </div>
 
