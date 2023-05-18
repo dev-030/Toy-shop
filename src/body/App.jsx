@@ -53,11 +53,7 @@ function App() {
 
               <TabPanel>
                 <div>
-                  {
-                    useEffect(()=>{
-                      console.log('hello')
-                    })
-                  }
+                  
                 <div className="card w-96 bg-base-100 shadow-xl">
                   <figure><img src="https://i.ibb.co/mFnDhGD/default-profile-picture-avatar-user-avatar-icon-person-icon-head-icon-profile-picture-icons-default.jpg" alt="Shoes" /></figure>
                   <div className="card-body">
@@ -73,11 +69,7 @@ function App() {
               
               <TabPanel>
 
-              {
-                useEffect(()=>{
-                  console.log('hello20')
-                })
-              }
+              
                 
                 <h2>Any content 2</h2>
               </TabPanel>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import ViewDetails from "./ViewDetails";
-import { Link } from "react-router-dom";
+import { Link , Outlet, useNavigate} from "react-router-dom";
 
 
 
@@ -9,6 +9,11 @@ export default function AllToys(){
 
     const [ toys, setToys] = useState([]);
 
+    const navigate = useNavigate();
+
+    const test = () => {
+        console.log('test called')
+    }
 
     const findInTable = ()=> {
         var input, filter, table, tr, td, i, txtValue;
@@ -36,6 +41,8 @@ export default function AllToys(){
     return(
         <div>
             <div className="mt-10">
+
+                <Outlet/>
 
                 <div className="overflow-x-auto">
 
@@ -78,7 +85,7 @@ export default function AllToys(){
                                         <td>{data.price}</td>
                                         <td>{data.quantity}</td>
                                         <td>
-                                        <Link to={'/view-details'}><label htmlFor="my-modal-3" className="btn">View Details</label></Link>
+                                        <Link to={`/all-toys/${data._id}`} className="btn">View Details</Link>
                                         </td>
                                     </tr>
                                 )
@@ -94,18 +101,15 @@ export default function AllToys(){
 
             <div>
 
-
-                <ViewDetails/>
-
-
-                {/* <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-                <div className="modal">
-                <div className="modal-box relative">
-                    <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 className="text-lg font-bold">Congratulations random Internet user!</h3>
-                    <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-                </div>
-                </div> */}
+       
+            <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+            <div className="modal">
+            <div className="modal-box relative">
+                <label onClick={()=>navigate(-1)} className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                <h3 className="text-lg font-bold">Congratulations random Internet user!</h3>
+                <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+            </div> 
+            </div>
 
 
             </div>

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
@@ -7,21 +7,31 @@ import 'react-toastify/dist/ReactToastify.css';
 import { authContext } from "../authentication/AuthProviders";
 
 
-
 export default function Login() {
+    
+
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || '/';
+    // const from = '/all-toys/64652fce2e4c3b951628ee70'
+    console.log(from)
+
 
         
-        const {userLogin,googleSignIn,githubSignIn ,googleLogin ,githubLogin} = useContext(authContext)
+    const {userLogin,googleSignIn,githubSignIn ,googleLogin ,githubLogin} = useContext(authContext)
 
     const navigate = useNavigate();
     const notify = (message) => toast.error(message);
 
 
     const login = (event) =>{
-        event.preventDefault();
+        event.preventDefault(); 
 
         userLogin(event.target.email.value,event.target.password.value).then(()=>{
-                navigate('/')
+            navigate(from);
+                // console.log(from)
+                console.log(`${from}`)
+
         }).catch((error)=>{
             if(error.message == 'Firebase: Error (auth/wrong-password).'){
                 notify('wrong-password.')
