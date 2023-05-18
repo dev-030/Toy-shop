@@ -10,7 +10,7 @@ export default function ViewDetails(){
     const navigate = useNavigate();
 
     const data = useLoaderData();
-    console.log('hello view details')
+  
 
 
     return(

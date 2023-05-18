@@ -15,10 +15,20 @@ export default function AllToys(){
         console.log('test called')
     }
 
+
+    const loadMore = () => {
+        fetch('http://localhost:3000/' , {
+            method : "POST" ,
+            headers : { 'content-type' : 'application/json'},
+            body : JSON.stringify({'value' : '10'})
+        }).then(data => data.json()).then(data => setToys(data))
+    }
+
+
+
     const findInTable = ()=> {
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("myInput");
-        console.log(input.value)
         filter = input.value.toUpperCase();
         table = document.getElementById("myTable");
         tr = table.getElementsByTagName("tr");
@@ -36,7 +46,7 @@ export default function AllToys(){
       }
 
     useEffect(()=>{
-        fetch('https://cute-gold-lemming-sari.cyclic.app/').then(data => data.json()).then(data => setToys(data))
+        fetch('http://localhost:3000/').then(data => data.json()).then(data => setToys(data))
     },[])
     return(
         <div>
@@ -45,8 +55,6 @@ export default function AllToys(){
                 <Outlet/>
 
                 <div className="overflow-x-auto">
-
-                {/* <input type="text" id="myInput" onKeyUp={()=> {findInTable()}} placeholder="Search for names.." title="Type in a name"/> */}
 
                     <table className="table w-full" id="myTable">
                         <thead>
@@ -101,19 +109,7 @@ export default function AllToys(){
 
             <div>
 
-       
-            <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-            <div className="modal">
-            <div className="modal-box relative">
-                <label onClick={()=>navigate(-1)} className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                <h3 className="text-lg font-bold">Congratulations random Internet user!</h3>
-                <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-            </div> 
             </div>
-
-
-            </div>
-
 
             
         </div>
