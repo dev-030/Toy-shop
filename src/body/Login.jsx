@@ -13,11 +13,8 @@ export default function Login() {
     const location = useLocation()
 
     const from = location.state?.from?.pathname || '/';
-    // const from = '/all-toys/64652fce2e4c3b951628ee70'
-    console.log(from)
 
 
-        
     const {userLogin,googleSignIn,githubSignIn ,googleLogin ,githubLogin} = useContext(authContext)
 
     const navigate = useNavigate();
@@ -28,10 +25,10 @@ export default function Login() {
         event.preventDefault(); 
 
         userLogin(event.target.email.value,event.target.password.value).then(()=>{
-            navigate(from);
-                // console.log(from)
-                console.log(`${from}`)
 
+            // navigate(from);
+            window.location.replace(from);
+               
         }).catch((error)=>{
             if(error.message == 'Firebase: Error (auth/wrong-password).'){
                 notify('wrong-password.')
