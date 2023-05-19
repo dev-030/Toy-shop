@@ -21,7 +21,7 @@ export default function AddToys(){
         data.sellerName = user?.displayName;
         data.sellerEmail = user?.email ;
         console.log(data.price)
-        fetch('http://localhost:3000/addtoys' , {
+        fetch('https://cute-gold-lemming-sari.cyclic.app/addtoys' , {
             method : 'POST' ,
             headers : {'content-type' : 'application/json'},
             body : JSON.stringify(data)

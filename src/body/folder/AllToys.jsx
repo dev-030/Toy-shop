@@ -17,7 +17,7 @@ export default function AllToys(){
 
 
     const loadMore = () => {
-        fetch('http://localhost:3000/' , {
+        fetch('https://cute-gold-lemming-sari.cyclic.app/' , {
             method : "POST" ,
             headers : { 'content-type' : 'application/json'},
             body : JSON.stringify({'value' : '10'})
@@ -46,7 +46,7 @@ export default function AllToys(){
       }
 
     useEffect(()=>{
-        fetch('http://localhost:3000/').then(data => data.json()).then(data => setToys(data))
+        fetch('https://cute-gold-lemming-sari.cyclic.app/').then(data => data.json()).then(data => setToys(data))
     },[])
     return(
         <div>

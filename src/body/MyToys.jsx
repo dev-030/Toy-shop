@@ -19,14 +19,14 @@ export default function MyToys(){
 
 
     useEffect(()=>{
-            fetch(`http://localhost:3000/my-toys?email=${user?.email}`).then(data => data.json()).then(data => setToys(data))
+            fetch(`https://cute-gold-lemming-sari.cyclic.app/my-toys?email=${user?.email}`).then(data => data.json()).then(data => setToys(data))
     },[count])
 
 
 
     const sortdata = (data) => {
 
-        fetch(`http://localhost:3000/my-toys/sort?email=${user?.email}&sorting=${data}`).then(data => data.json()).then(data => setToys(data))
+        fetch(`https://cute-gold-lemming-sari.cyclic.app/my-toys/sort?email=${user?.email}&sorting=${data}`).then(data => data.json()).then(data => setToys(data))
        
     }
 
@@ -39,7 +39,7 @@ export default function MyToys(){
         })
         .then((willDelete) => {
         if (willDelete) {            
-            fetch('http://localhost:3000/my-toys' , {
+            fetch('https://cute-gold-lemming-sari.cyclic.app/my-toys' , {
                 method : "DELETE" , 
                 headers : { 'content-type' : 'application/json'} ,
                 body : JSON.stringify({data})
@@ -72,7 +72,7 @@ export default function MyToys(){
         const description = event.target.description.value;
         const totaldata = {id,name,price,quantity,rating,description}
 
-        fetch('http://localhost:3000/' , {
+        fetch('https://cute-gold-lemming-sari.cyclic.app/' , {
             method :'PUT' ,
             headers : {'Content-type' : 'application/json'} ,
             body : JSON.stringify(totaldata)
