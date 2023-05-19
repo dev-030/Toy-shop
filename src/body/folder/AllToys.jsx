@@ -80,9 +80,6 @@ export default function AllToys(){
                             {
                                 toys.map(data => 
                                     <tr key={data.id} className="hover border border-black">
-                                        {
-                                            console.log(data)
-                                        }
                                         <th></th>
                                         <td>
                                             <div className="flex items-center space-x-3">

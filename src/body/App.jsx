@@ -255,15 +255,6 @@ function App() {
         </div>
       </section>
 
-
-   
-
-
-
-
-
-
-
     </>
   )
 }

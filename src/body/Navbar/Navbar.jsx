@@ -18,22 +18,17 @@ export default function Navbar(){
         <div className="navbar bg-[#e9f8ff] top-0  text-black sm:px-3 md:px-10">
           <div className="navbar-start">
             <div className="dropdown">
-              <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+              <label tabIndex={0} className="btn btn-ghost lg:hidden" onClick={()=>{document.getElementById('menu2').classList.toggle('hidden')}}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
               </label>
-              <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a>Item 1</a></li>
-                <li tabIndex={0}>
-                  <a className="justify-between">
-                    Parent
-                    <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
-                  </a>
-                  <ul className="p-2">
-                    <li><a>Submenu 1</a></li>
-                    <li><a>Submenu 2</a></li>
-                  </ul>
-                </li>
-                <li><a>Item 3</a></li>
+
+              <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 hidden" id="menu2">
+                <li ><NavLink to={'/'} className='visited:bg-[#808bfe]' onClick={()=>{document.getElementById('menu2').classList.toggle('hidden')}}>Home</NavLink></li>
+                <li><NavLink to={'/all-toys'} className='visited:bg-[#808bfe]' onClick={()=>{document.getElementById('menu2').classList.toggle('hidden')}}>All Toys</NavLink></li>
+                <li><NavLink to={'/my-toys'} className='visited:bg-[#808bfe]' onClick={()=>{document.getElementById('menu2').classList.toggle('hidden')}}>My Toys</NavLink></li>
+                <li><NavLink to={'/add-toy'} className='visited:bg-[#808bfe]' onClick={()=>{document.getElementById('menu2').classList.toggle('hidden')}}>Add Toy</NavLink></li>
+                <li><NavLink to={'/blog'} className='visited:bg-[#808bfe]' onClick={()=>{document.getElementById('menu2').classList.toggle('hidden')}}>Blog</NavLink></li>
+
               </ul>
             </div>
             <a className="btn hover:bg-transparent btn-ghost normal-case text-3xl  font-extrabold text-black" href="/">Toy<label style={{color:'#808bfe'}} className="cursor-pointer font-extrabold">Shop</label> </a>
@@ -46,7 +41,7 @@ export default function Navbar(){
                 { user&&
                 <>
                   <NavLink to={'/my-toys'} className=''>My Toys</NavLink>
-                  <NavLink to={'/add-toy'} className=''>Add a toy</NavLink>
+                  <NavLink to={'/add-toy'} className=''>Add Toy</NavLink>
                   </>
                 }
     
@@ -69,13 +64,7 @@ export default function Navbar(){
               </div>
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-              <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
-              <li><a>Settings</a></li>
+             
               <li><a onClick={()=>userLogout()}>Logout</a></li>
             </ul>
             </div> 
