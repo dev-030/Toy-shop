@@ -54,7 +54,7 @@ function App() {
           </div>
         </div>
         <div className='p-2'>
-          <Link onClick={()=>{(user)? window.location.replace(`/all-toys/${data._id}`) :setTimeout(() => window.location.replace(`/all-toys/${data._id}`) , 3000)}}><button className="btn block w-full rounded-xl" 
+          <Link onClick={()=>{(user)? window.location.replace(`/all-toys/${data._id}`) :setTimeout(() => window.location.replace(`/all-toys/${data._id}`) , 2000)}}><button className="btn block w-full rounded-xl" 
           onClick={()=>{(user)? '' : toast.error('You have to log in first to view details.')}}>View Details</button></Link>
         </div>
       </div>

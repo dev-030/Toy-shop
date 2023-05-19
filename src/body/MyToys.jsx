@@ -33,7 +33,7 @@ export default function MyToys(){
         fetch(`https://cute-gold-lemming-sari.cyclic.app/my-toys/sort?email=${user?.email}&sorting=${data}`).then(data => data.json()).then(data => setToys(data))
 
         if(data==1){toast.success("Sorted in ascending format")}
-        else{toast.success("Sorted in desscending format")}
+        else{toast.success("Sorted in descending format")}
        
     }
 

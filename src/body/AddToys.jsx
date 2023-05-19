@@ -60,7 +60,7 @@ export default function AddToys(){
 
             <h1 className="text-center text-3xl font-bold mt-2 underline decoration-4 underline-offset-[10px]">Add Toys</h1>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="m-auto my-10 w-1/2">
+            <form onSubmit={handleSubmit(onSubmit)} className="m-auto my-10 w-fit">
 
                 <div className="grid grid-cols-2 gap-5">
 
@@ -69,16 +69,7 @@ export default function AddToys(){
                     <input {...register("name", { required:'true', maxLength: 20 })} placeholder="Toy Name" className="input input-bordered w-full max-w-xs"/>
                     <input {...register("image", { required:'true' })} type="text" placeholder="Photo Url" className="input input-bordered w-full max-w-xs"/>
                     <input type="number" {...register("price", {required:'true',maxLength: 20 })} placeholder="Price" className="input input-bordered w-full max-w-xs"/>
-                    <CreatableSelect defaultValue={selectedOption} placeholder={'Category'} onChange={(data) => setSelectedOption(data)} className="max-w-xs " theme={(theme) => ({
-      ...theme,
-      borderRadius: 8,
-      
-      colors: {
-        ...theme.colors,
-        primary25: '',
-        primary: ' #f2f2f2',
-      },
-    })} options={options}/>
+                    <CreatableSelect defaultValue={selectedOption} placeholder={'Category'} onChange={(data) => setSelectedOption(data)} className="max-w-xs " options={options}/>
                     <input type="number" {...register("rating", {required:'true'})} placeholder="rating" className="input input-bordered w-full max-w-xs"/>
                     <input type="number" {...register("quantity", {required:'true'})} placeholder="Available quantity" className="input input-bordered w-full max-w-xs"/>
 
