@@ -140,7 +140,7 @@ function App() {
             <div className='bg-white z-[-10] h-[380px] w-64 absolute bottom-[-43px] left-[-4px] rounded-[20px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'></div>
           </div>
 
-          <div className='w-[250px] relative mt-7' data-aos="fade-right" data-aos-duration="2000">
+          <div className='w-[250px] relative mt-10' data-aos="fade-right" data-aos-duration="1000">
             <div className='relative '>
               <figure><img src="/photo-1.png" alt="Shoes" className='h-60 z-1'/></figure>
               <div className='bg-[#e9f8ff] h-[250px] w-64  z-[-1] absolute top-[6px] left-[-4px] rounded-[20px] '></div>
@@ -152,7 +152,7 @@ function App() {
             <div className='bg-white z-[-10] h-[380px] w-64 absolute bottom-[-43px] left-[-4px] rounded-[20px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'></div>
           </div>
 
-          <div className='w-[250px] relative mt-7' data-aos="fade-right" data-aos-duration="3000">
+          <div className='w-[250px] relative mt-10' data-aos="fade-right" data-aos-duration="1000">
             <div className='relative '>
               <figure><img src="/photo-1.png" alt="Shoes" className='h-60 z-1'/></figure>
               <div className='bg-[#e9f8ff] h-[250px] w-64  z-[-1] absolute top-[6px] left-[-4px] rounded-[20px] '></div>
@@ -197,12 +197,12 @@ function App() {
         <h1 className='text-2xl font-bold text-center pt-20 text-[#808bfe] underline decoration-4 underline-offset-[10px]'>Shop by category</h1>
         <div className='text-center mx-20 max-[650px]:mx-2 mt-16'>
           <Tabs>
-            <TabList>
+            <TabList className='font-bold '>
               <Tab onClick={()=>{tabdata('Sports Car')}}>Sports Cars</Tab>
               <Tab onClick={()=>{tabdata('Supercar')}}>Super Cars</Tab>
               <Tab onClick={()=>{tabdata('Truck')}}>Trucks</Tab>
             </TabList>
-
+ 
             <TabPanel>
               {tabpaneldata}
             </TabPanel>
@@ -222,7 +222,7 @@ function App() {
       <section>
         <div className="max-w-full px-56 mb-10 mt-32 m-auto max-[1080px]:px-8">
           <div
-            className="w-full"
+            className="w-full shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]"
             style={{
               backgroundImage: `url("https://i.ibb.co/X5QVysF/newsletter-background.webp")`, borderRadius:'20px'
             }}
@@ -254,6 +254,10 @@ function App() {
           </div>
         </div>
       </section>
+
+
+   
+
 
 
 
