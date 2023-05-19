@@ -123,12 +123,12 @@ function App() {
 
       
 
-      <section className='my-24 mx-auto w-fit'>
+      <section className='my-10 mx-auto w-fit'>
 
         <h1 className='text-3xl font-bold text-center text-[#808bfe] underline decoration-4 underline-offset-[10px]'>Trending Toys</h1>
 
-        <div className='flex gap-10 mx-auto justify-center mt-16' >
-          <div className='w-[250px] relative' data-aos="fade-right" data-aos-duration="1000">
+        <div className='flex gap-10 mx-auto justify-center mt-7 max-[875px]:flex-wrap px-5' >
+          <div className='w-[250px] relative mt-10' data-aos="fade-right" data-aos-duration="1000">
             <div className='relative '>
               <figure><img src="/photo-1.png" alt="Shoes" className='h-60 z-1'/></figure>
               <div className='bg-[#e9f8ff] h-[250px] w-64  z-[-1] absolute top-[6px] left-[-4px] rounded-[20px] '></div>
@@ -140,7 +140,7 @@ function App() {
             <div className='bg-white z-[-10] h-[380px] w-64 absolute bottom-[-43px] left-[-4px] rounded-[20px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'></div>
           </div>
 
-          <div className='w-[250px] relative' data-aos="fade-right" data-aos-duration="2000">
+          <div className='w-[250px] relative mt-7' data-aos="fade-right" data-aos-duration="2000">
             <div className='relative '>
               <figure><img src="/photo-1.png" alt="Shoes" className='h-60 z-1'/></figure>
               <div className='bg-[#e9f8ff] h-[250px] w-64  z-[-1] absolute top-[6px] left-[-4px] rounded-[20px] '></div>
@@ -152,7 +152,7 @@ function App() {
             <div className='bg-white z-[-10] h-[380px] w-64 absolute bottom-[-43px] left-[-4px] rounded-[20px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'></div>
           </div>
 
-          <div className='w-[250px] relative' data-aos="fade-right" data-aos-duration="3000">
+          <div className='w-[250px] relative mt-7' data-aos="fade-right" data-aos-duration="3000">
             <div className='relative '>
               <figure><img src="/photo-1.png" alt="Shoes" className='h-60 z-1'/></figure>
               <div className='bg-[#e9f8ff] h-[250px] w-64  z-[-1] absolute top-[6px] left-[-4px] rounded-[20px] '></div>
