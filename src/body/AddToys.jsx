@@ -5,9 +5,12 @@ import CreatableSelect from 'react-select/creatable';
 import { authContext } from "../authentication/AuthProviders";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from "../hooks/useTitle";
 
 export default function AddToys(){
 
+
+    useTitle('Add Toys')
 
     const {loading , user}  = useContext(authContext)
 

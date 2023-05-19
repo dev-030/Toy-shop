@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { Navigate, useLoaderData, useLocation, useNavigate } from "react-router-dom"
+import useTitle from "../../hooks/useTitle";
 
 
 export default function ViewDetails(){
@@ -7,6 +8,7 @@ export default function ViewDetails(){
 
 
 
+    
     const navigate = useNavigate();
 
     const data = useLoaderData();

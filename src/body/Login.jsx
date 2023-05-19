@@ -5,11 +5,13 @@ import { IoLogoGithub } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { authContext } from "../authentication/AuthProviders";
+import useTitle from "../hooks/useTitle";
 
 
 export default function Login() {
     
 
+    useTitle('Login')
     const location = useLocation()
 
     const from = location.state?.from?.pathname || '/';

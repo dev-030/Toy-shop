@@ -8,11 +8,13 @@ import { authContext } from '../authentication/AuthProviders';
 import Rating from "react-rating";
 import { AiOutlineStar ,AiTwotoneStar} from "react-icons/ai";
 import './app.css'
+import useTitle from '../hooks/useTitle';
 
 function App() {
 
   const {user}  = useContext(authContext)
   const [ data , setdata ] = useState([]);
+  useTitle('Home')
 
   const tabdata = (data) => {
     fetch(`https://cute-gold-lemming-sari.cyclic.app/category/?category=${data}`).then(data => data.json()).then(data => setdata(data))

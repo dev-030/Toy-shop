@@ -1,7 +1,10 @@
+import useTitle from "../hooks/useTitle"
 
 
 
 export default function Blog(){
+
+  useTitle('Blog')
     return(
         <div>
             <div className="bg-white min-h-[70vh]">

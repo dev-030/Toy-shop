@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import ViewDetails from "./ViewDetails";
 import { Link , Outlet, useNavigate} from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 
 
@@ -8,6 +9,7 @@ import { Link , Outlet, useNavigate} from "react-router-dom";
 export default function AllToys(){
 
     const [ toys, setToys] = useState([]);
+    useTitle('All Toys')
 
     const navigate = useNavigate();
 

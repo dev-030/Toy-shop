@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import swal from 'sweetalert';
 import { authContext } from "../authentication/AuthProviders";
+import useTitle from "../hooks/useTitle";
 
 
 
@@ -12,6 +13,7 @@ import { authContext } from "../authentication/AuthProviders";
 export default function MyToys(){
 
 
+    useTitle('My Toys')
     const {user} = useContext(authContext);
     const [ toys, setToys ] = useState([]);
     const [modaldata , setmodaldata ] = useState([]);

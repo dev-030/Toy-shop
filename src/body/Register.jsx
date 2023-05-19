@@ -4,12 +4,13 @@ import { updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { authContext } from "../authentication/AuthProviders";
+import useTitle from "../hooks/useTitle";
 
 
 
 export default function Register(){
     
-
+    useTitle('Register')
     const {userRegister} = useContext(authContext);
     const navigate = useNavigate()
 
