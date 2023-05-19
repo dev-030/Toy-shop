@@ -13,9 +13,9 @@ export default function Navbar(){
 
     return(
 
-      <div>
+      <div className=''>
 
-        <div className="navbar bg-black top-0  text-white">
+        <div className="navbar bg-[#e9f8ff] top-0  text-black sm:px-3 md:px-10">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -60,8 +60,8 @@ export default function Navbar(){
 
           { user && 
 
-            <div className="dropdown dropdown-end text-black">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="dropdown dropdown-end text-black tooltip tooltip-bottom" data-tip={user?.displayName}>
+            <label tabIndex={0} className="btn bg-slate-400 btn-circle avatar">
               <div className="w-10 rounded-full">
                 <img src={!loading && 
                 (user?.photoURL)? user.photoURL : 'https://i.ibb.co/LxV7GQ6/vector-users-icon.jpg' } />
