@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react"
-import { AiOutlineDelete } from "react-icons/ai";
-import { RxUpdate } from "react-icons/rx";
+import { MdDeleteSweep } from "react-icons/md";
+import { GrDocumentUpdate } from "react-icons/gr";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import swal from 'sweetalert';
 import { authContext } from "../authentication/AuthProviders";
 import useTitle from "../hooks/useTitle";
+import { TbSortAscending } from "react-icons/tb";
+import { TbSortDescending } from "react-icons/tb";
 
 
 
@@ -29,6 +31,9 @@ export default function MyToys(){
     const sortdata = (data) => {
 
         fetch(`https://cute-gold-lemming-sari.cyclic.app/my-toys/sort?email=${user?.email}&sorting=${data}`).then(data => data.json()).then(data => setToys(data))
+
+        if(data==1){toast.success("Sorted in ascending format")}
+        else{toast.success("Sorted in desscending format")}
        
     }
 
@@ -117,10 +122,6 @@ export default function MyToys(){
         <div>
 
 
-            <button className="btn" onClick={()=> {sortdata(1)}}>Ascending</button>
-            <button className="btn" onClick={()=> {sortdata(-1)}}>Descending</button>
-
-
             <ToastContainer position="bottom-right"
             autoClose={3000}
             hideProgressBar={false}
@@ -145,8 +146,17 @@ export default function MyToys(){
 
                             </th>
                             <th>Category</th>
-                            <th>Price</th>
+                            <th >
+
+                                <div className="flex gap-3 items-center">
+                                <TbSortAscending size={20} className="cursor-pointer" onClick={()=> {sortdata(1)}}/>
+                                <p>Price</p>
+                                <TbSortDescending size={20} className="cursor-pointer" onClick={()=> {sortdata(-1)}}/>
+                                </div>
+                               
+                                </th>
                             <th>Available Quantity</th>
+                            <th>Rating</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -157,7 +167,7 @@ export default function MyToys(){
                         {
                             toys.map(data => 
                                 <tr key={data._id} className="hover">
-                                    <th>{data.id}</th>
+                                    <th></th>
                                     <td>
                                         <div className="flex items-center space-x-3">
                                             <div className="avatar">
@@ -169,13 +179,18 @@ export default function MyToys(){
                                         </div>
                                     </td>
                                     <td>{data.category}</td>
-                                    <td>{data.price}</td>
-                                    <td>{data.quantity}</td>
+                                    <td className="pl-[59px]">{data.price}</td>
+                                    <td className="pl-[59px]">{data.quantity}</td>
+                                    <td className="pl-[40px]">{data.rating}</td>
+
+                                    <td></td>
                                     <td>
-                                        <RxUpdate size={30} onClick={()=>updataData(data)}/>
-                                    </td>
-                                    <td>
-                                        <AiOutlineDelete size={30} onClick={()=>deletedata(data._id)}/>
+                                        <div className="flex items-center gap-10">
+                                        <GrDocumentUpdate className="cursor-pointer" size={23} onClick={()=>updataData(data)}/>
+
+                                        <MdDeleteSweep className="cursor-pointer" size={30} onClick={()=>deletedata(data._id)}/>
+
+                                        </div>
                                     </td>
                                 </tr>
                             )

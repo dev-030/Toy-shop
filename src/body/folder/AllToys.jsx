@@ -52,7 +52,7 @@ export default function AllToys(){
     },[])
     return(
         <div>
-            <div className="mt-10">
+            <div className="">
 
                 <Outlet/>
 
@@ -80,7 +80,7 @@ export default function AllToys(){
                                 toys.map(data => 
                                     <tr key={data.id} className="hover">
 
-                                        <th>{data.id}</th>
+                                        <th></th>
                                         <td>
                                             <div className="flex items-center space-x-3">
                                                 <div className="avatar">
@@ -93,7 +93,7 @@ export default function AllToys(){
                                         </td>
                                         <td>{data.category}</td>
                                         <td>{data.price}</td>
-                                        <td>{data.quantity}</td>
+                                        <td className="pl-20">{data.quantity}</td>
                                         <td>
                                         <Link to={`/all-toys/${data._id}`} className="btn">View Details</Link>
                                         </td>

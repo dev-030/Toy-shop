@@ -10,9 +10,7 @@ export default function ViewDetails(){
 
     
     const navigate = useNavigate();
-
     const data = useLoaderData();
-  
 
 
     return(
@@ -23,10 +21,21 @@ export default function ViewDetails(){
 
             <input type="checkbox" id="my-modal-3" className="modal-toggle" defaultChecked/>
             <div className="modal">
-            <div className="modal-box relative">
+            <div className="modal-box relative w-fit">
                 <label onClick={()=>navigate('/all-toys')} className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                <h3 className="text-lg font-bold">{data[0].name}</h3>
-                <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+                <img src={data[0].image} className="h-72 w-auto mx-auto rounded-2xl"/>
+
+                <div className="flex flex-col gap-2 mt-5 font-bold">
+                    <p>Toy Name : {data[0].name}</p>
+                    <p>Seller Name : {data[0]?.sellerName}</p>
+                    <p>Seller Email : {data[0]?.sellerEmail}</p>
+                    <p>Price : {data[0].price}</p>
+                    <p>Rating : {data[0].rating}</p>
+                    <p>Available Quantity : {data[0].quantity}</p>
+                    <p>Description : {data[0]?.description}</p>
+                </div>
+
+                
             </div> 
             </div>
 
