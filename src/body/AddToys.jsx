@@ -43,7 +43,7 @@ export default function AddToys(){
 
 
     return(
-        <div>
+        <div className="h-[90vh]">
 
 
             <ToastContainer position="bottom-right"

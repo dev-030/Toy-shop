@@ -9,6 +9,7 @@ export default function Navbar(){
 
   const {user,loading ,userLogout} = useContext(authContext)
 
+  
 
     return(
 
@@ -62,8 +63,8 @@ export default function Navbar(){
             <div className="dropdown dropdown-end text-black">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src={user?.photoURL} />
-                <img className="mask mask-squircle" src={user?.photoURL} />
+                <img src={!loading && 
+                (user?.photoURL)? user.photoURL : 'https://i.ibb.co/LxV7GQ6/vector-users-icon.jpg' } />
               </div>
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">

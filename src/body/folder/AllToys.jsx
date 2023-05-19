@@ -51,8 +51,8 @@ export default function AllToys(){
         fetch('https://cute-gold-lemming-sari.cyclic.app/').then(data => data.json()).then(data => setToys(data))
     },[])
     return(
-        <div>
-            <div className="">
+        <div >
+            <div >
 
                 <Outlet/>
 
