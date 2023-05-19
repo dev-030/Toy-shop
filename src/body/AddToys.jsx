@@ -23,7 +23,6 @@ export default function AddToys(){
         data.category = selectedOption?.value;
         data.sellerName = user?.displayName;
         data.sellerEmail = user?.email ;
-        console.log(data.price)
         fetch('https://cute-gold-lemming-sari.cyclic.app/addtoys' , {
             method : 'POST' ,
             headers : {'content-type' : 'application/json'},
@@ -32,12 +31,12 @@ export default function AddToys(){
             toast.success("Successfully added.");
         })
     };
-
+ 
 
     const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' },
+        { value: 'Sports Car', label: 'Sports Car' },
+        { value: 'Supercar', label: 'Supercar' },
+        { value: 'Truck', label: 'Truck' },
     ];
 
 
@@ -70,13 +69,13 @@ export default function AddToys(){
                     <input {...register("image", { required:'true' })} type="text" placeholder="Photo Url" className="input input-bordered w-full max-w-xs"/>
                     <input type="number" {...register("price", {required:'true',maxLength: 20 })} placeholder="Price" className="input input-bordered w-full max-w-xs"/>
                     <CreatableSelect defaultValue={selectedOption} placeholder={'Category'} onChange={(data) => setSelectedOption(data)} className="max-w-xs " options={options}/>
-                    <input type="number" {...register("rating", {required:'true'})} placeholder="rating" className="input input-bordered w-full max-w-xs"/>
+                    <input type="number" {...register("rating",{ min: 1, max: 5 })} placeholder="rating (1 - 5) only" className="input input-bordered w-full max-w-xs"/>
                     <input type="number" {...register("quantity", {required:'true'})} placeholder="Available quantity" className="input input-bordered w-full max-w-xs"/>
 
                 </div>
 
                 <textarea  {...register("description")}  placeholder="Bio" className="textarea textarea-bordered block w-full h-[16vh] my-4" ></textarea>
-                <button className="btn block w-full">Add Toy</button>
+                <button className="btn block w-full bg-[#808bfe] hover:bg-[#666fcb] border-none">Add Toy</button>
 
             </form>
 

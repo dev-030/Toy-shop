@@ -137,16 +137,16 @@ export default function MyToys(){
 
                 <table className="table w-full" id="myTable">
                     <thead>
-                        <tr>
-                            <th></th>
-                            <th className="flex gap-10 items-center">
+                        <tr className="divide-y" style={{borderBottom:'1px solid black'}}>
+                            <th className="bg-[#e9f8ff]"></th>
+                            <th className="flex gap-10 items-center bg-[#e9f8ff]">
                             <h1 className="text-sm">Name</h1>
 
                             <input type="text" id="myInput" onKeyUp={()=> {findInTable()}} placeholder="Search for names.." title="Type in a name"  className="input input-bordered"/>
 
                             </th>
-                            <th>Category</th>
-                            <th >
+                            <th className="bg-[#e9f8ff]">Category</th>
+                            <th className="bg-[#e9f8ff]">
 
                                 <div className="flex gap-3 items-center">
                                 <TbSortAscending size={20} className="cursor-pointer" onClick={()=> {sortdata(1)}}/>
@@ -155,18 +155,18 @@ export default function MyToys(){
                                 </div>
                                
                                 </th>
-                            <th>Available Quantity</th>
-                            <th>Rating</th>
-                            <th></th>
-                            <th></th>
+                            <th className="bg-[#e9f8ff]">Available Quantity</th>
+                            <th className="bg-[#e9f8ff]">Rating</th>
+                            <th className="bg-[#e9f8ff]"></th>
+                            <th className="bg-[#e9f8ff] "></th>
                         </tr>
                     </thead>
 
                     <tbody>
 
-                        {
+                        {toys.length!=0?
                             toys.map(data => 
-                                <tr key={data._id} className="hover">
+                                <tr key={data._id} className="hover ">
                                     <th></th>
                                     <td>
                                         <div className="flex items-center space-x-3">
@@ -193,7 +193,7 @@ export default function MyToys(){
                                         </div>
                                     </td>
                                 </tr>
-                            )
+                            ) : <tr><td><h1>You Havent added any toys.</h1></td></tr>
                         }
                     </tbody>
                 </table>
@@ -207,26 +207,26 @@ export default function MyToys(){
                     <div>
                 
                         <label htmlFor="">Toy name : </label>
-                        <input type="text" defaultValue={modaldata.name} className="border border-black" id="name" />  
+                        <input type="text" defaultValue={modaldata.name} className="ml-4 mb-2 input input-bordered w-full max-w-xs" id="name" />  
                         <br />
                         <label htmlFor="">Price : </label>
-                        <input type="number" defaultValue={modaldata.price} className="border border-black" id="price" />   
+                        <input type="number" defaultValue={modaldata.price} className="ml-12 mb-2 input input-bordered w-full max-w-xs" id="price" />   
                         <br />
                         <label htmlFor="">Quantity : </label>
-                        <input type="number" defaultValue={modaldata.quantity} className="border border-black" id="quantity" />  
+                        <input type="number" defaultValue={modaldata.quantity} className="ml-5 mb-2 input input-bordered w-full max-w-xs" id="quantity" />  
                         <br />
                         <label htmlFor="">Rating : </label>
-                        <input type="number" defaultValue={modaldata.rating} className="border border-black" id="rating" />   
+                        <input type="number" defaultValue={modaldata.rating} className="ml-9 mb-2 input input-bordered w-full max-w-xs" id="rating" />   
                         <br />
                         <label htmlFor="">Description : </label>
-                        <input type="text" defaultValue={modaldata?.description} className="border border-black" id="description" />   
+                        <input type="text" defaultValue={modaldata?.description} className="input mb-2 input-bordered w-full max-w-xs" id="description" />   
 
                     </div>
 
 
                     <div className="modal-action">
-                        <label htmlFor="my-modal-6" className="btn">Cancel</label>
-                        <button type="submit" className="btn">Update</button> 
+                        <label htmlFor="my-modal-6" className="btn bg-[#808bfe] hover:bg-[#666fcb] border-none">Cancel</label>
+                        <button type="submit" className="btn bg-[#808bfe] hover:bg-[#666fcb] border-none">Update</button> 
                     </div>
 
                 </form>

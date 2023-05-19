@@ -52,7 +52,7 @@ export default function AllToys(){
     },[])
     return(
         <div >
-            <div >
+            <div>
 
                 <Outlet/>
 
@@ -60,26 +60,29 @@ export default function AllToys(){
 
                     <table className="table w-full" id="myTable">
                         <thead>
-                        <tr>
-                            <th></th>
-                            <th className="flex gap-10 items-center">
-                            <h1 className="text-sm">Name</h1>
+                        <tr className="divide-y">
+                            <th className="bg-[#e9f8ff]"></th>
+                            <th className="flex gap-10 items-center bg-[#e9f8ff]">
+                            <h1 className="text-sm ">Name</h1>
 
-                            <input type="text" id="myInput" onKeyUp={()=> {findInTable()}} placeholder="Search for names.." title="Type in a name"  className="input input-bordered"/>
+                            <input type="text" id="myInput" onKeyUp={()=> {findInTable()}} placeholder="Search for names.." title="Type in a name"  className="input input-bordered "/>
 
                             </th>
-                            <th>Category</th>
-                            <th>Price</th>
-                            <th>Available Quantity</th>
-                            <th>Details</th>
+                            <th className="bg-[#e9f8ff]">Seller</th>
+                            <th className="bg-[#e9f8ff]">Category</th>
+                            <th className="bg-[#e9f8ff]">Price</th>
+                            <th className="bg-[#e9f8ff]">Available Quantity</th>
+                            <th className="bg-[#e9f8ff]">Details</th>
                         </tr>
                         </thead>
                         <tbody>
 
                             {
                                 toys.map(data => 
-                                    <tr key={data.id} className="hover">
-
+                                    <tr key={data.id} className="hover border border-black">
+                                        {
+                                            console.log(data)
+                                        }
                                         <th></th>
                                         <td>
                                             <div className="flex items-center space-x-3">
@@ -91,6 +94,7 @@ export default function AllToys(){
                                                 <div>{data.name}</div>
                                             </div>
                                         </td>
+                                        <td>{data?.sellerName}</td>
                                         <td>{data.category}</td>
                                         <td>{data.price}</td>
                                         <td className="pl-20">{data.quantity}</td>

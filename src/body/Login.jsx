@@ -70,7 +70,7 @@ export default function Login() {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-col">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold text-green-500">Login now!</h1>
+                        <h1 className="text-5xl font-bold text-[#808bfe]">Login now!</h1>
                         
                     </div>
                     <form className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100" onSubmit={login}>
@@ -99,7 +99,7 @@ export default function Login() {
                                     <Link to="/register" className="label-text-alt link">Dont have an account ?</Link>
                                 </label>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary btn-ghost text-white bg-green-500 hover:bg-green-600">Login</button>
+                                <button className="btn btn-primary btn-ghost text-white bg-[#808bfe] hover:bg-[#666fcb] border-none">Login</button>
                             </div>
                         </div>
                     </form>

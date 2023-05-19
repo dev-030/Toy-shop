@@ -61,7 +61,7 @@ export default function Register(){
                 <div className="hero-content flex-col lg:flex-col">
 
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl text-green-500 font-bold">Register now!</h1>
+                        <h1 className="text-5xl text-green-500 font-bold text-[#808bfe]">Register now!</h1>
                     </div>
 
 
@@ -98,7 +98,7 @@ export default function Register(){
                             </div>
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-ghost bg-green-500 text-white hover:bg-green-600">Register</button>
+                                <button className="btn btn-ghost text-white bg-[#808bfe] hover:bg-[#666fcb] border-none">Register</button>
                             </div>
                         </div>
                     </form>
