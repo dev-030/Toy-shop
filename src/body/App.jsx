@@ -88,6 +88,27 @@ function App() {
       draggable
       pauseOnHover
       theme="light"/>
+
+
+
+
+
+      <section>
+        <div className="hero min-h-screen" style={{ backgroundImage: `url("/maxresdefault.jpg")` }}>
+          <div className="hero-overlay bg-opacity-60"></div>
+          <div className="hero-content text-center text-neutral-content">
+            <div className="max-w-md">
+              <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+              <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+              <button className="btn btn-primary">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
       
       <div className="hero bg-[#e9f8ff]">
         <div className="hero-content w-[80%] h-[90vh] flex-col lg:flex-row-reverse text-white">
@@ -95,19 +116,11 @@ function App() {
           <div className='relative'>
               
             <img src="/updated.png" className='w-[1100px]'/>
-            {/* <div className='h-[200px] w-[300px] bg-red-500 rounded-[20px] absolute'>
-            <img src="/updated.png" className="max-h-[600px] z-10 relative" />
-
-            </div>
-            <div className='h-[200px] w-[300px] bg-red-500 rounded-[20px] absolute'>
-            <img src="/updated.png" className="max-h-[600px] z-10 relative" />
-            </div> */}
-
           </div>    
           <div className='text-black'>
 
             <div className='z-60 relative'>
-              <h1 className="text-5xl font-bold z-10">Find your best  Toys for your <br /> children</h1>
+              <h1 className="text-5xl max-[730px]:text-4xl max-[650px]:text-3xl font-bold z-10">Find your best  Toys for your <br /> children</h1>
               <div className='h-[140px] w-[7px] bg-[#808bfe] absolute z-0 left-[-13px] top-1'></div>
             </div>
             
@@ -123,12 +136,38 @@ function App() {
 
       
 
-      <section className='my-10 mx-auto w-fit'>
+      {/* <section className='my-10 mx-auto w-fit'>
 
         <h1 className='text-3xl font-bold text-center text-[#808bfe] underline decoration-4 underline-offset-[10px]'>Trending Toys</h1>
 
-        <div className='flex gap-10 mx-auto justify-center mt-7 max-[875px]:flex-wrap px-5' >
-          <div className='w-[250px] relative mt-10' data-aos="fade-right" data-aos-duration="1000">
+        <div className='flex mx-auto justify-center max-[875px]:flex-wrap px-5' >
+
+
+          <div className='w-[290px] relative mt-10 border border-black'>
+            <div className='relative '>
+              <figure><img src="/photo-1.png" alt="Shoes" className='h-60 z-[3] mx-auto'/></figure>
+              <div className='bg-[black] h-[250px] w-64 z-[1]  absolute top-[10px] left-[50px] rounded-[20px] '></div>
+              <TfiArrowRight size={40} className=' bg-[#808bfe] p-2 rounded-full text-white absolute bottom-[-33px] left-[99px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'/>
+            </div>
+            <div className='z-[5]'>
+              <p className='mt-14 text-center'>Get the dream car , well not a real one , but </p>
+            </div>
+            <div className='bg-white z-[-1]  h-[380px] w-full absolute bottom-[-10px] left-[-14px] rounded-[20px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'></div>
+          </div>
+
+          <div className='w-[280px] relative mt-10' data-aos="fade-right" data-aos-duration="1000">
+            <div className='relative '>
+              <figure><img src="/photo-1.png" alt="Shoes" className='h-64 z-1'/></figure>
+              <div className='bg-[#e9f8ff] h-[250px] w-64  z-[-1] absolute top-[6px] left-[-4px] rounded-[20px] '></div>
+              <TfiArrowRight size={40} className='bg-[#808bfe] p-2 rounded-full text-white absolute bottom-[-33px] left-[99px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'/>
+            </div>
+            <div className=''>
+              <p className='mt-14 text-center'>Get the dream car , well not a real one , but </p>
+            </div>
+            <div className='bg-white z-[-10] h-[380px] w-64 absolute bottom-[-43px] left-[-4px] rounded-[20px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'></div>
+          </div>
+
+          <div className='w-[280px] relative mt-10' data-aos="fade-right" data-aos-duration="1000">
             <div className='relative '>
               <figure><img src="/photo-1.png" alt="Shoes" className='h-60 z-1'/></figure>
               <div className='bg-[#e9f8ff] h-[250px] w-64  z-[-1] absolute top-[6px] left-[-4px] rounded-[20px] '></div>
@@ -140,55 +179,37 @@ function App() {
             <div className='bg-white z-[-10] h-[380px] w-64 absolute bottom-[-43px] left-[-4px] rounded-[20px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'></div>
           </div>
 
-          <div className='w-[250px] relative mt-10' data-aos="fade-right" data-aos-duration="1000">
-            <div className='relative '>
-              <figure><img src="/photo-1.png" alt="Shoes" className='h-60 z-1'/></figure>
-              <div className='bg-[#e9f8ff] h-[250px] w-64  z-[-1] absolute top-[6px] left-[-4px] rounded-[20px] '></div>
-              <TfiArrowRight size={40} className='bg-[#808bfe] p-2 rounded-full text-white absolute bottom-[-33px] left-[99px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'/>
-            </div>
-            <div className=''>
-              <p className='mt-14 text-center'>Get the dream car , well not a real one , but </p>
-            </div>
-            <div className='bg-white z-[-10] h-[380px] w-64 absolute bottom-[-43px] left-[-4px] rounded-[20px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'></div>
-          </div>
 
-          <div className='w-[250px] relative mt-10' data-aos="fade-right" data-aos-duration="1000">
-            <div className='relative '>
-              <figure><img src="/photo-1.png" alt="Shoes" className='h-60 z-1'/></figure>
-              <div className='bg-[#e9f8ff] h-[250px] w-64  z-[-1] absolute top-[6px] left-[-4px] rounded-[20px] '></div>
-              <TfiArrowRight size={40} className='bg-[#808bfe] p-2 rounded-full text-white absolute bottom-[-33px] left-[99px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'/>
-            </div>
-            <div className=''>
-              <p className='mt-14 text-center'>Get the dream car , well not a real one , but </p>
-            </div>
-            <div className='bg-white z-[-10] h-[380px] w-64 absolute bottom-[-43px] left-[-4px] rounded-[20px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'></div>
+        </div>
+
+      </section> */}
+
+
+
+
+
+
+
+      <section className=''>
+
+        <h1 className='text-3xl font-bold text-center'>Gallery</h1>
+
+        <div className='flex gap-2 justify-center mt-20 flex-wrap px-2'>
+          <div>
+          <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[450px] rounded-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)]' />
+          </div>
+          <div className='grid grid-cols-2 w-fit gap-3'>
+            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[218px] rounded-tl-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)]' />
+            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[218px] rounded-tr-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)]' />
+            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[218px] rounded-bl-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)]' />
+            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[218px] rounded-br-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)]' />
+
           </div>
         </div>
 
+
       </section>
 
-
-
-
-
-{/* 
-      <section className='mt-10'>
-
-            <h1 className='text-center text-2xl font-bold underline decoration-4 underline-offset-[10px]'>Gallery</h1>
-            <div className='grid grid-cols-2 w-fit mx-auto gap-3'>
-
-              <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-40 w-40'/>
-              <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-40 w-40'/>
-
-              <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-40 w-40'/>
-
-              <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-40 w-40'/>
-
-
-            </div>
-
-
-      </section> */}
 
 
 
