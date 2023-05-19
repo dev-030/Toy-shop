@@ -16,7 +16,7 @@ import Login from './body/Login.jsx';
 import Register from './body/Register.jsx';
 import ViewDetails from './body/folder/ViewDetails.jsx';
 import PrivateRoute from './authentication/PrivateRoute.jsx';
-import NotFound from './body/Notfound.jsx';
+import Notfoundpage from './body/Notfoundpage.jsx';
 
 
 
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
     ]
   },{
     path:'*',
-    element : <NotFound/>
+    element : <Notfoundpage/>
   }
 ]);
 
