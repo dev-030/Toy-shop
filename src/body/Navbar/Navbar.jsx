@@ -89,7 +89,7 @@ export default function Navbar(){
         <footer className="footer px-10 pt-10 bg-[#808bfe] text-white">
           <div>
           <img src="/logo.png" className='h-12 max-[380px]:h-10 mx-auto'/>
-          <a className="btn hover:bg-transparent btn-ghost normal-case text-3xl  font-extrabold text-black" href="/">Toy<label style={{color:'white'}} className="cursor-pointer font-extrabold">Shop</label> </a>
+          <a className="btn hover:bg-transparent btn-ghost normal-case text-3xl font-extrabold text-black" href="/">Toy<label style={{color:'white'}} className="cursor-pointer font-extrabold">Shop</label> </a>
            <p>Get the toy you love.</p>
           </div> 
           <div>

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
 import { Link , Outlet, useNavigate} from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
-
+import LazyLoad from 'react-lazy-load';
+import Skeleton , { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 
 
@@ -53,6 +55,12 @@ export default function AllToys(){
 
                 <div className="overflow-x-auto">
 
+                <div className="px-20 mt-16 text-white max-[1080px]:px-8" id="skel">
+                    <SkeletonTheme baseColor="white" highlightColor="#e9f8ff">
+                        <Skeleton count={5} height={30}/>
+                    </SkeletonTheme>
+                </div>
+
                     <table className="table w-full" id="myTable">
                         <thead>
                         <tr className="divide-y">
@@ -74,9 +82,12 @@ export default function AllToys(){
 
                             {
                                 toys.map(data => 
+
                                     <tr key={data.id} className="hover border border-black">
+
                                         <th></th>
                                         <td>
+                                        <LazyLoad   onContentVisible={() => {document.getElementById('skel').classList.add('hidden')}}>
                                             <div className="flex items-center space-x-3">
                                                 <div className="avatar">
                                                 <div className="mask mask-squircle w-12 h-12">
@@ -85,6 +96,7 @@ export default function AllToys(){
                                                 </div>
                                                 <div>{data.name}</div>
                                             </div>
+                                        </LazyLoad>
                                         </td>
                                         <td>{data?.sellerName}</td>
                                         <td>{data.category}</td>
@@ -93,7 +105,9 @@ export default function AllToys(){
                                         <td>
                                         <Link to={`/all-toys/${data._id}`} className="btn">View Details</Link>
                                         </td>
+
                                     </tr>
+
                                 )
                             }
 
