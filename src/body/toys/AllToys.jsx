@@ -55,7 +55,7 @@ export default function AllToys(){
                 <div className="overflow-x-auto">
                     <table className="table w-full" id="myTable">
                         <thead>
-                            <tr className="divide-y">
+                            <tr className="divide-y" style={{borderBottom:'1px solid black'}}>
                                 <th className="bg-[#e9f8ff]"></th>
                                 <th className="flex gap-10 items-center bg-[#e9f8ff]">
                                 <h1 className="text-sm ">Name</h1>
@@ -75,7 +75,7 @@ export default function AllToys(){
                             {
                                 toys.map(data => 
 
-                                    <tr key={data._id} className="hover border border-black">
+                                    <tr key={data._id} className="hover border border-black" >
 
                                         <th></th>
                                         <td>
@@ -105,7 +105,7 @@ export default function AllToys(){
                     </table>
                     <div className="px-20 text-white max-[1080px]:px-8" id="skel">
                         <SkeletonTheme baseColor="white" highlightColor="#e9f8ff">
-                            <Skeleton count={5} height={30}/>
+                            <Skeleton count={5} height={60}/>
                         </SkeletonTheme>
                     </div>
                 </div>

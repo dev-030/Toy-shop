@@ -15,7 +15,7 @@ export default function Navbar(){
 
       <div>
 
-        <div className="navbar bg-[#e9f8ff] top-0  text-black sm:px-3 md:px-10">
+        <div className="navbar bg-[#e9f8ff] top-0  text-black md:px-10 px-6 ">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden" onClick={()=>{document.getElementById('menu2').classList.toggle('hidden')}}>
@@ -32,7 +32,7 @@ export default function Navbar(){
               </ul>
             </div>
             <img src="/logo.png" className='h-12 max-[380px]:h-10'/>
-            <a className="btn hover:bg-transparent btn-ghost normal-case text-3xl max-[380px]:text-2xl font-extrabold text-black" href="/">Toy<label style={{color:'#808bfe'}} className="cursor-pointer font-extrabold">Shop</label> </a>
+            <a className="normal-case text-3xl max-[380px]:text-2xl font-extrabold text-black" href="/">Toy<label style={{color:'#808bfe'}} className="cursor-pointer font-extrabold">Shop</label> </a>
 
           </div>
           <div className="navbar-center hidden lg:flex">
