@@ -4,8 +4,8 @@ import { GrDocumentUpdate } from "react-icons/gr";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import swal from 'sweetalert';
-import { authContext } from "../authentication/AuthProviders";
-import useTitle from "../hooks/useTitle";
+import { authContext } from "../../authentication/AuthProviders";
+import useTitle from "../../hooks/useTitle";
 import { TbSortAscending } from "react-icons/tb";
 import { TbSortDescending } from "react-icons/tb";
 
@@ -193,7 +193,7 @@ export default function MyToys(){
                                         </div>
                                     </td>
                                 </tr>
-                            ) : <tr><td><h1>You Havent added any toys.</h1></td></tr>
+                            ) : <tr><td><h1 className="flex justify-center">You Havent added any toys.</h1></td></tr>
                         }
                     </tbody>
                 </table>

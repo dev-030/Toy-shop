@@ -8,13 +8,13 @@ import {
 } from "react-router-dom";
 import Navbar from './body/Navbar/Navbar.jsx';
 import AuthProviders from './authentication/AuthProviders.jsx';
-import AddToys from './body/AddToys.jsx';
-import MyToys from './body/MyToys.jsx';
-import AllToys from './body/folder/AllToys.jsx';
+import AddToys from './body/toys/AddToys.jsx';
+import MyToys from './body/toys/MyToys.jsx';
+import AllToys from './body/toys/AllToys.jsx';
 import Blog from './body/Blog.jsx';
-import Login from './body/Login.jsx';
-import Register from './body/Register.jsx';
-import ViewDetails from './body/folder/ViewDetails.jsx';
+import Login from './authentication/Login.jsx';
+import Register from './authentication/Register.jsx';
+import ViewDetails from './body/toys/ViewDetails.jsx';
 import PrivateRoute from './authentication/PrivateRoute.jsx';
 import Notfoundpage from './body/Notfoundpage.jsx';
 

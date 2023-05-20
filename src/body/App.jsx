@@ -41,7 +41,7 @@ function App() {
     {
       data.map(data => 
       <div key={data._id} className="card lg:w-72 md:w-auto bg-base-100 shadow-[0_1px_4px_rgba(0,0,0,0.16)] 
-        hover:shadow-[0_3px_8px_rgba(0,0,0,0.20)] transition duration-500 ease-in-out">
+        hover:shadow-[0_3px_8px_rgba(0,0,0,0.20)] transition duration-500 ease-in-out hover:scale-[105%] ">
         <figure><img src={data.image} className='h-48 w-full' /></figure>
         <div className="card-body h-36">
           <h2 className="card-title">{data.name}</h2>
@@ -94,34 +94,14 @@ function App() {
 
 
       <section>
-        <div className="hero min-h-screen" style={{ backgroundImage: `url("/maxresdefault.jpg")` }}>
-          <div className="hero-overlay bg-opacity-60"></div>
-          <div className="hero-content text-center text-neutral-content">
-            <div className="max-w-md">
-              <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-              <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-              <button className="btn btn-primary">Get Started</button>
-            </div>
-          </div>
-        </div>
-      </section>
+              <div className="hero min-h-screen max-w-[90%] mx-auto">
+          <div className="hero-content flex-col lg:flex-row-reverse">
+            <img src="plane.png" className=" max-w-[100%] rounded-lg hover:scale-[105%] transition duration-500 ease-in-out" />
+            <div className='text-black '>
 
-
-
-
-      
-      <div className="hero bg-[#e9f8ff]">
-        <div className="hero-content w-[80%] h-[90vh] flex-col lg:flex-row-reverse text-white">
-          
-          <div className='relative'>
-              
-            <img src="/updated.png" className='w-[1100px]'/>
-          </div>    
-          <div className='text-black'>
-
-            <div className='z-60 relative'>
-              <h1 className="text-5xl max-[730px]:text-4xl max-[650px]:text-3xl font-bold z-10">Find your best  Toys for your <br /> children</h1>
-              <div className='h-[140px] w-[7px] bg-[#808bfe] absolute z-0 left-[-13px] top-1'></div>
+            <div className='relative'>
+              <h1 className="text-5xl mt-10 max-[730px]:text-4xl max-[650px]:text-3xl font-bold">Find your best  Toys for your <br /> children</h1>
+              <div className='h-[140px] w-[7px] bg-[#de2621] absolute left-[-13px] top-1'></div>
             </div>
             
             <div className='flex gap-4 py-6 items-center'>
@@ -130,79 +110,48 @@ function App() {
             </div>
             <button className="btn bg-[#808bfe] border-none hover:bg-[#6c78ff]">Get Started</button>
           </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      
+      <div className="hero">
+        <div className="hero-content w-[90%]  flex-col lg:flex-row text-white">
+          
+          <img src="/updated.png" className='max-w-full hover:scale-[120%] transition duration-500 ease-in-out'/>
+          <div className="text-black text-center other bg-[url('/blobanimation.svg')] bg-no-repeat bg-center bg-contain max-[700px]:py-[8em] max-[480px]:py-[3em] py-[15em]">
+            <h1 className="text-5xl max-[730px]:text-4xl max-[650px]:text-3xl font-bold">Get your dream car toy today</h1>
+            <div className='py-3'>
+              <h1 className='font-semibold'>We deliver best of fantastic,hand-piched,age appriciate toys</h1>
+            </div>
+            <button className="btn bg-[#808bfe] border-none hover:bg-[#6c78ff]">Get Started</button>
+          </div>
+
+          <img src="" alt="" srcset="" />
+
         </div>
       </div>
 
 
-      
-
-      {/* <section className='my-10 mx-auto w-fit'>
-
-        <h1 className='text-3xl font-bold text-center text-[#808bfe] underline decoration-4 underline-offset-[10px]'>Trending Toys</h1>
-
-        <div className='flex mx-auto justify-center max-[875px]:flex-wrap px-5' >
-
-
-          <div className='w-[290px] relative mt-10 border border-black'>
-            <div className='relative '>
-              <figure><img src="/photo-1.png" alt="Shoes" className='h-60 z-[3] mx-auto'/></figure>
-              <div className='bg-[black] h-[250px] w-64 z-[1]  absolute top-[10px] left-[50px] rounded-[20px] '></div>
-              <TfiArrowRight size={40} className=' bg-[#808bfe] p-2 rounded-full text-white absolute bottom-[-33px] left-[99px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'/>
-            </div>
-            <div className='z-[5]'>
-              <p className='mt-14 text-center'>Get the dream car , well not a real one , but </p>
-            </div>
-            <div className='bg-white z-[-1]  h-[380px] w-full absolute bottom-[-10px] left-[-14px] rounded-[20px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'></div>
-          </div>
-
-          <div className='w-[280px] relative mt-10' data-aos="fade-right" data-aos-duration="1000">
-            <div className='relative '>
-              <figure><img src="/photo-1.png" alt="Shoes" className='h-64 z-1'/></figure>
-              <div className='bg-[#e9f8ff] h-[250px] w-64  z-[-1] absolute top-[6px] left-[-4px] rounded-[20px] '></div>
-              <TfiArrowRight size={40} className='bg-[#808bfe] p-2 rounded-full text-white absolute bottom-[-33px] left-[99px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'/>
-            </div>
-            <div className=''>
-              <p className='mt-14 text-center'>Get the dream car , well not a real one , but </p>
-            </div>
-            <div className='bg-white z-[-10] h-[380px] w-64 absolute bottom-[-43px] left-[-4px] rounded-[20px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'></div>
-          </div>
-
-          <div className='w-[280px] relative mt-10' data-aos="fade-right" data-aos-duration="1000">
-            <div className='relative '>
-              <figure><img src="/photo-1.png" alt="Shoes" className='h-60 z-1'/></figure>
-              <div className='bg-[#e9f8ff] h-[250px] w-64  z-[-1] absolute top-[6px] left-[-4px] rounded-[20px] '></div>
-              <TfiArrowRight size={40} className='bg-[#808bfe] p-2 rounded-full text-white absolute bottom-[-33px] left-[99px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'/>
-            </div>
-            <div className=''>
-              <p className='mt-14 text-center'>Get the dream car , well not a real one , but </p>
-            </div>
-            <div className='bg-white z-[-10] h-[380px] w-64 absolute bottom-[-43px] left-[-4px] rounded-[20px] shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]'></div>
-          </div>
-
-
-        </div>
-
-      </section> */}
 
 
 
+      <section className='my-32'>
 
-
-
-
-      <section className=''>
-
-        <h1 className='text-3xl font-bold text-center'>Gallery</h1>
+        <h1 className='text-3xl font-bold text-center underline underline-offset-8 text-[#808bfe] '>Gallery</h1>
 
         <div className='flex gap-2 justify-center mt-20 flex-wrap px-2'>
           <div>
-          <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[450px] rounded-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)]' />
+          <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[450px] rounded-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)] hover:scale-[102%] transition duration-500 ease-in-out max-[400px]:max-h-[300px]'/>
           </div>
-          <div className='grid grid-cols-2 w-fit gap-3'>
-            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[218px] rounded-tl-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)]' />
-            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[218px] rounded-tr-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)]' />
-            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[218px] rounded-bl-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)]' />
-            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[218px] rounded-br-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)]' />
+          <div className='grid grid-cols-2 w-fit gap-3 max-[400px]:max-w-[300px]'>
+            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[218px] rounded-tl-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)] hover:scale-[105%] transition duration-500 ease-in-out max-[400px]:max-h-[180px]' />
+            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[218px] rounded-tr-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)] hover:scale-[105%] transition duration-500 ease-in-out max-[400px]:max-h-[180px]' />
+            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[218px] rounded-bl-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)] hover:scale-[105%] transition duration-500 ease-in-out max-[400px]:max-h-[180px]' />
+            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600" className='h-[218px] rounded-br-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.30)] hover:scale-[105%] transition duration-500 ease-in-out max-[400px]:max-h-[180px]' />
 
           </div>
         </div>
@@ -215,7 +164,7 @@ function App() {
 
 
       <section >
-        <h1 className='text-2xl font-bold text-center pt-20 text-[#808bfe] underline decoration-4 underline-offset-[10px]'>Shop by category</h1>
+        <h1 className='text-2xl font-bold text-center mt-44 text-[#808bfe] underline decoration-4 underline-offset-[10px]'>Shop by category</h1>
         <div className='text-center mx-20 max-[650px]:mx-2 mt-16'>
           <Tabs>
             <TabList className='font-bold '>
@@ -243,7 +192,7 @@ function App() {
       <section>
         <div className="max-w-full px-56 mb-10 mt-32 m-auto max-[1080px]:px-8">
           <div
-            className="w-full shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]"
+            className="w-full shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)] hover:scale-[105%] transition duration-500 ease-in-out"
             style={{
               backgroundImage: `url("https://i.ibb.co/X5QVysF/newsletter-background.webp")`, borderRadius:'20px'
             }}

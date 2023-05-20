@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { authContext } from "../authentication/AuthProviders";
+import { authContext } from "./AuthProviders";
 import useTitle from "../hooks/useTitle";
 
 

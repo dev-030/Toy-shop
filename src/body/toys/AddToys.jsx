@@ -2,10 +2,10 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import Select from 'react-select';
 import CreatableSelect from 'react-select/creatable';
-import { authContext } from "../authentication/AuthProviders";
+import { authContext } from "../../authentication/AuthProviders";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import useTitle from "../hooks/useTitle";
+import useTitle from "../../hooks/useTitle";
 
 export default function AddToys(){
 

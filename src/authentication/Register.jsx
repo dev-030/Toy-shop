@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { authContext } from "../authentication/AuthProviders";
+import { authContext } from "./AuthProviders";
 import useTitle from "../hooks/useTitle";
 
 
