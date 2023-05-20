@@ -57,13 +57,15 @@ export default function Register(){
             pauseOnHover
             theme="light"/>
 
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-col">
+            <div className="hero min-h-screen ">
+                <div className="hero-content flex">
 
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl text-green-500 font-bold text-[#808bfe]">Register now!</h1>
+                    <div className="">
+                        <img src="/register.svg" className="w-[640px] max-[850px]:hidden"/>
                     </div>
 
+                    <div>
+                    <h1 className="text-5xl text-center mb-5 font-bold text-[#808bfe]">Sign Up</h1>
 
                     <form className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100" onSubmit={register}>
                         <div className="card-body">
@@ -102,6 +104,7 @@ export default function Register(){
                             </div>
                         </div>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -68,12 +68,20 @@ export default function Login() {
             pauseOnHover
             theme="light"/>
 
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-col">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold text-[#808bfe]">Login now!</h1>
+            <div className="hero min-h-screen">
+                <div className="hero-content flex lg:flex justify-center">
+                    <div>
+
+                        <img src="/login.svg" className="w-[600px] max-[850px]:hidden" />
+
                         
                     </div>
+
+                    <div>
+
+                    <h1 className="text-5xl font-bold text-center text-[#808bfe] mb-6">Sign In</h1>
+
+
                     <form className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100" onSubmit={login}>
                         <div className="card-body">
                             <div className="form-control">
@@ -104,6 +112,8 @@ export default function Login() {
                             </div>
                         </div>
                     </form>
+                    </div>
+
                 </div>
             </div>
         </div>

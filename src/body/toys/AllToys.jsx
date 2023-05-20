@@ -14,7 +14,6 @@ export default function AllToys(){
 
 
    
-
     const loadMore = () => {
         fetch('https://cute-gold-lemming-sari.cyclic.app/' , {
             method : "POST" ,
@@ -48,35 +47,28 @@ export default function AllToys(){
         fetch('https://cute-gold-lemming-sari.cyclic.app/').then(data => data.json()).then(data => setToys(data))
     },[])
     return(
-        <div >
-            <div>
+        <div>
+            <div className="min-h-[90vh]">
 
                 <Outlet/>
 
                 <div className="overflow-x-auto">
-
-                <div className="px-20 mt-16 text-white max-[1080px]:px-8" id="skel">
-                    <SkeletonTheme baseColor="white" highlightColor="#e9f8ff">
-                        <Skeleton count={5} height={30}/>
-                    </SkeletonTheme>
-                </div>
-
                     <table className="table w-full" id="myTable">
                         <thead>
-                        <tr className="divide-y">
-                            <th className="bg-[#e9f8ff]"></th>
-                            <th className="flex gap-10 items-center bg-[#e9f8ff]">
-                            <h1 className="text-sm ">Name</h1>
+                            <tr className="divide-y">
+                                <th className="bg-[#e9f8ff]"></th>
+                                <th className="flex gap-10 items-center bg-[#e9f8ff]">
+                                <h1 className="text-sm ">Name</h1>
 
-                            <input type="text" id="myInput" onKeyUp={()=> {findInTable()}} placeholder="Search for names.." title="Type in a name"  className="input input-bordered "/>
+                                <input type="text" id="myInput" onKeyUp={()=> {findInTable()}} placeholder="Search for names.." title="Type in a name"  className="input input-bordered "/>
 
-                            </th>
-                            <th className="bg-[#e9f8ff]">Seller</th>
-                            <th className="bg-[#e9f8ff]">Category</th>
-                            <th className="bg-[#e9f8ff]">Price</th>
-                            <th className="bg-[#e9f8ff]">Available Quantity</th>
-                            <th className="bg-[#e9f8ff]">Details</th>
-                        </tr>
+                                </th>
+                                <th className="bg-[#e9f8ff]">Seller</th>
+                                <th className="bg-[#e9f8ff]">Category</th>
+                                <th className="bg-[#e9f8ff]">Price</th>
+                                <th className="bg-[#e9f8ff]">Available Quantity</th>
+                                <th className="bg-[#e9f8ff]">Details</th>
+                            </tr>
                         </thead>
                         <tbody>
 
@@ -103,27 +95,21 @@ export default function AllToys(){
                                         <td>{data.price}</td>
                                         <td className="pl-20">{data.quantity}</td>
                                         <td>
-                                        <Link to={`/all-toys/${data._id}`} className="btn">View Details</Link>
+                                            <Link to={`/all-toys/${data._id}`} className="btn">View Details</Link>
                                         </td>
-
                                     </tr>
-
                                 )
                             }
 
                         </tbody>
                     </table>
+                    <div className="px-20 text-white max-[1080px]:px-8" id="skel">
+                        <SkeletonTheme baseColor="white" highlightColor="#e9f8ff">
+                            <Skeleton count={5} height={30}/>
+                        </SkeletonTheme>
+                    </div>
                 </div>
-
-            </div>
-
-
-
-            <div>
-
-            </div>
-
-            
+            </div>  
         </div>
     )
 }

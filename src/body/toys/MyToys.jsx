@@ -20,13 +20,16 @@ export default function MyToys(){
     const [ toys, setToys ] = useState([]);
     const [modaldata , setmodaldata ] = useState([]);
     const [ count , setCount ] = useState(true);
-
+    const [loading ,setLoading ] = useState(false);
 
     useEffect(()=>{
-            fetch(`https://cute-gold-lemming-sari.cyclic.app/my-toys?email=${user?.email}`).then(data => data.json()).then(data => setToys(data))
+        fetch(`https://cute-gold-lemming-sari.cyclic.app/my-toys?email=${user?.email}`).then(data => data.json()).then(data => {
+            setToys(data)
+            setLoading(true);
+        })
     },[count])
 
-
+    console.log(toys.length==0)
 
     const sortdata = (data) => {
 
@@ -119,7 +122,7 @@ export default function MyToys(){
 
     return(
 
-        <div className="h-[90vh]">
+        <div className="h-[90vh] relative">
 
 
             <ToastContainer position="bottom-right"
@@ -133,8 +136,15 @@ export default function MyToys(){
             pauseOnHover
             theme="light"/>
 
-            <div className="overflow-x-auto">
+            {loading && toys.length==0 &&
+                <div className="p-10 top-28 w-full flex justify-center absolute">
+                    <h1 className=" bg-white p-3 rounded-xl font-semibold">You haven't added any Toys.</h1>
+                </div>
+            }
+                
 
+            <div className="overflow-x-auto top-0">
+                
                 <table className="table w-full" id="myTable">
                     <thead>
                         <tr className="divide-y" style={{borderBottom:'1px solid black'}}>
@@ -164,9 +174,9 @@ export default function MyToys(){
 
                     <tbody>
 
-                        {toys.length!=0?
+                        {
                             toys.map(data => 
-                                <tr key={data._id} className="hover ">
+                                <tr key={data._id} className="hover">
                                     <th></th>
                                     <td>
                                         <div className="flex items-center space-x-3">
@@ -182,18 +192,15 @@ export default function MyToys(){
                                     <td className="pl-[59px]">{data.price}</td>
                                     <td className="pl-[59px]">{data.quantity}</td>
                                     <td className="pl-[40px]">{data.rating}</td>
-
                                     <td></td>
                                     <td>
                                         <div className="flex items-center gap-10">
-                                        <GrDocumentUpdate className="cursor-pointer" size={23} onClick={()=>updataData(data)}/>
-
-                                        <MdDeleteSweep className="cursor-pointer" size={30} onClick={()=>deletedata(data._id)}/>
-
+                                            <GrDocumentUpdate className="cursor-pointer" size={23} onClick={()=>updataData(data)}/>
+                                            <MdDeleteSweep className="cursor-pointer" size={30} onClick={()=>deletedata(data._id)}/>
                                         </div>
                                     </td>
                                 </tr>
-                            ) : <tr><td><h1 className="flex justify-center">You Havent added any toys.</h1></td></tr>
+                            ) 
                         }
                     </tbody>
                 </table>
