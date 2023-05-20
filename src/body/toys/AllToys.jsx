@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import ViewDetails from "./ViewDetails";
 import { Link , Outlet, useNavigate} from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
 
@@ -11,12 +10,8 @@ export default function AllToys(){
     const [ toys, setToys] = useState([]);
     useTitle('All Toys')
 
-    const navigate = useNavigate();
 
-    const test = () => {
-        console.log('test called')
-    }
-
+   
 
     const loadMore = () => {
         fetch('https://cute-gold-lemming-sari.cyclic.app/' , {

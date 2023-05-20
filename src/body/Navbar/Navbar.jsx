@@ -13,7 +13,7 @@ export default function Navbar(){
 
     return(
 
-      <div className=''>
+      <div>
 
         <div className="navbar bg-[#e9f8ff] top-0  text-black sm:px-3 md:px-10">
           <div className="navbar-start">
@@ -31,7 +31,8 @@ export default function Navbar(){
 
               </ul>
             </div>
-            <a className="btn hover:bg-transparent btn-ghost normal-case text-3xl  font-extrabold text-black" href="/">Toy<label style={{color:'#808bfe'}} className="cursor-pointer font-extrabold">Shop</label> </a>
+            <img src="/logo.png" className='h-12 max-[380px]:h-10'/>
+            <a className="btn hover:bg-transparent btn-ghost normal-case text-3xl max-[380px]:text-2xl font-extrabold text-black" href="/">Toy<label style={{color:'#808bfe'}} className="cursor-pointer font-extrabold">Shop</label> </a>
 
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -87,6 +88,7 @@ export default function Navbar(){
 
         <footer className="footer px-10 pt-10 bg-[#808bfe] text-white">
           <div>
+          <img src="/logo.png" className='h-12 max-[380px]:h-10 mx-auto'/>
           <a className="btn hover:bg-transparent btn-ghost normal-case text-3xl  font-extrabold text-black" href="/">Toy<label style={{color:'white'}} className="cursor-pointer font-extrabold">Shop</label> </a>
            <p>Get the toy you love.</p>
           </div> 

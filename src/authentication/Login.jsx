@@ -12,12 +12,13 @@ export default function Login() {
     
 
     useTitle('Login')
+
     const location = useLocation()
 
     const from = location.state?.from?.pathname || '/';
 
 
-    const {userLogin,googleSignIn,githubSignIn ,googleLogin ,githubLogin} = useContext(authContext)
+    const {userLogin,googleLogin ,githubLogin} = useContext(authContext)
 
     const navigate = useNavigate();
     const notify = (message) => toast.error(message);
@@ -45,12 +46,12 @@ export default function Login() {
 
     const singIn = () =>{
         googleLogin().then(()=>{
-            navigate('/')
+            window.location.replace(from);   
         })
     }
     const github = () =>{
         githubLogin().then(()=>{
-            navigate('/')
+            window.location.replace(from);
         })
     }
     return (

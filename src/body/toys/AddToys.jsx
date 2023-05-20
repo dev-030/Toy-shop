@@ -17,7 +17,7 @@ export default function AddToys(){
 
     const [selectedOption, setSelectedOption] = useState(null);
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset ,formState: { errors } } = useForm();
 
     const onSubmit = data => {
         data.category = selectedOption?.value;
@@ -29,6 +29,7 @@ export default function AddToys(){
             body : JSON.stringify(data)
         }).then(data => data.json()).then(data => {
             toast.success("Successfully added.");
+            reset()
         })
     };
  
