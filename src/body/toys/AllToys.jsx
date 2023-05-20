@@ -83,7 +83,7 @@ export default function AllToys(){
                             {
                                 toys.map(data => 
 
-                                    <tr key={data.id} className="hover border border-black">
+                                    <tr key={data._id} className="hover border border-black">
 
                                         <th></th>
                                         <td>
