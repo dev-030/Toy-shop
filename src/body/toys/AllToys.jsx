@@ -15,7 +15,7 @@ export default function AllToys(){
 
    
     const loadMore = () => {
-        fetch('https://cute-gold-lemming-sari.cyclic.app/' , {
+        fetch('https://prime-hydra-381808.uc.r.appspot.com/' , {
             method : "POST" ,
             headers : { 'content-type' : 'application/json'},
             body : JSON.stringify({'value' : '10'})
@@ -44,7 +44,7 @@ export default function AllToys(){
       }
 
     useEffect(()=>{
-        fetch('https://cute-gold-lemming-sari.cyclic.app/').then(data => data.json()).then(data => setToys(data))
+        fetch('https://prime-hydra-381808.uc.r.appspot.com/').then(data => data.json()).then(data => setToys(data))
     },[])
     return(
         <div>

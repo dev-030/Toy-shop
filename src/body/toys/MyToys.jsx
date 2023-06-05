@@ -23,7 +23,7 @@ export default function MyToys(){
     const [loading ,setLoading ] = useState(false);
 
     useEffect(()=>{
-        fetch(`https://cute-gold-lemming-sari.cyclic.app/my-toys?email=${user?.email}`).then(data => data.json()).then(data => {
+        fetch(`https://prime-hydra-381808.uc.r.appspot.com/my-toys?email=${user?.email}`).then(data => data.json()).then(data => {
             setToys(data)
             setLoading(true);
         })
@@ -33,7 +33,7 @@ export default function MyToys(){
 
     const sortdata = (data) => {
 
-        fetch(`https://cute-gold-lemming-sari.cyclic.app/my-toys/sort?email=${user?.email}&sorting=${data}`).then(data => data.json()).then(data => setToys(data))
+        fetch(`https://prime-hydra-381808.uc.r.appspot.com/my-toys/sort?email=${user?.email}&sorting=${data}`).then(data => data.json()).then(data => setToys(data))
 
         if(data==1){toast.success("Sorted in ascending format")}
         else{toast.success("Sorted in descending format")}
@@ -49,7 +49,7 @@ export default function MyToys(){
         })
         .then((willDelete) => {
         if (willDelete) {            
-            fetch('https://cute-gold-lemming-sari.cyclic.app/my-toys' , {
+            fetch('https://prime-hydra-381808.uc.r.appspot.com/my-toys' , {
                 method : "DELETE" , 
                 headers : { 'content-type' : 'application/json'} ,
                 body : JSON.stringify({data})
@@ -82,7 +82,7 @@ export default function MyToys(){
         const description = event.target.description.value;
         const totaldata = {id,name,price,quantity,rating,description}
 
-        fetch('https://cute-gold-lemming-sari.cyclic.app/' , {
+        fetch('https://prime-hydra-381808.uc.r.appspot.com/' , {
             method :'PUT' ,
             headers : {'Content-type' : 'application/json'} ,
             body : JSON.stringify(totaldata)
