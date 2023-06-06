@@ -23,7 +23,7 @@ export default function AddToys(){
         data.category = selectedOption?.value;
         data.sellerName = user?.displayName;
         data.sellerEmail = user?.email ;
-        fetch('https://prime-hydra-381808.uc.r.appspot.com/addtoys' , {
+        fetch('https://test2-jy3vq3ac5q-uc.a.run.app/addtoys' , {
             method : 'POST' ,
             headers : {'content-type' : 'application/json'},
             body : JSON.stringify(data)
