@@ -15,7 +15,7 @@ export default function AllToys(){
 
    
     const loadMore = () => {
-        fetch('https://test2-jy3vq3ac5q-uc.a.run.app/' , {
+        fetch('https://toy-shop-server-jy3vq3ac5q-uc.a.run.app/' , {
             method : "POST" ,
             headers : { 'content-type' : 'application/json'},
             body : JSON.stringify({'value' : '10'})
@@ -44,7 +44,7 @@ export default function AllToys(){
       }
 
     useEffect(()=>{
-        fetch('https://test2-jy3vq3ac5q-uc.a.run.app/').then(data => data.json()).then(data => setToys(data))
+        fetch('https://toy-shop-server-jy3vq3ac5q-uc.a.run.app/').then(data => data.json()).then(data => setToys(data))
     },[])
     return(
         <div>
