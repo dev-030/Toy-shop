@@ -1,5 +1,5 @@
 
-Live site - https://assignment0011.netlify.app
+Live site - https://toy-shop-02.netlify.app/
 
 - One stop place for car toys.
 - You can get your favourite car toy here.
