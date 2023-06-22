@@ -39,7 +39,7 @@ const router = createBrowserRouter([
           {
             path:'/all-toys/:id',
             element :<PrivateRoute><ViewDetails path={'/login'} data={true}/></PrivateRoute>,
-            loader : ({params}) => fetch(`https://test2-jy3vq3ac5q-uc.a.run.app/all-toys/${params.id}`)
+            loader : ({params}) => fetch(`https://toy-shop-server-jy3vq3ac5q-uc.a.run.app/all-toys/${params.id}`)
           }
         ]
       },
