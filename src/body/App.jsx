@@ -26,11 +26,11 @@ function App() {
   useTitle('Home')
 
   const tabdata = (data) => {
-    fetch(`https://test2-jy3vq3ac5q-uc.a.run.app/category/?category=${data}`).then(data => data.json()).then(data => setdata(data))
+    fetch(`https://toy-shop-server-jy3vq3ac5q-uc.a.run.app/category/?category=${data}`).then(data => data.json()).then(data => setdata(data))
   }
 
   useEffect(()=>{
-    fetch(`https://test2-jy3vq3ac5q-uc.a.run.app/category/?category=Sports Car`).then(data => data.json()).then(data => setdata(data))
+    fetch(`https://toy-shop-server-jy3vq3ac5q-uc.a.run.app/category/?category=Sports Car`).then(data => data.json()).then(data => setdata(data))
   },[])
 
 
